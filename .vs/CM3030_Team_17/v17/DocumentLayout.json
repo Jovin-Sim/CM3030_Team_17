@@ -1,0 +1,73 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{51C0CB43-2DFC-557C-6EAE-A864E5394980}|NavMeshPlusEditor.csproj|c:\\users\\cindy\\onedrive\\documents\\github\\cm3030_team_17\\assets\\navmeshcomponents\\editor\\navmeshassetmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51C0CB43-2DFC-557C-6EAE-A864E5394980}|NavMeshPlusEditor.csproj|solutionrelative:assets\\navmeshcomponents\\editor\\navmeshassetmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4889C6EE-15FB-3046-828E-16BB9384DD47}|NavMeshPlus.csproj|c:\\users\\cindy\\onedrive\\documents\\github\\cm3030_team_17\\assets\\navmeshcomponents\\scripts\\navmeshsurface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4889C6EE-15FB-3046-828E-16BB9384DD47}|NavMeshPlus.csproj|solutionrelative:assets\\navmeshcomponents\\scripts\\navmeshsurface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\assets\\scripts\\enemy\\baseenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\baseenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NavMeshAssetManager.cs",
+              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\NavMeshComponents\\Editor\\NavMeshAssetManager.cs",
+              "RelativeDocumentMoniker": "Assets\\NavMeshComponents\\Editor\\NavMeshAssetManager.cs",
+              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\NavMeshComponents\\Editor\\NavMeshAssetManager.cs",
+              "RelativeToolTip": "Assets\\NavMeshComponents\\Editor\\NavMeshAssetManager.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAwEIBAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T08:54:03.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NavMeshSurface.cs",
+              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\NavMeshComponents\\Scripts\\NavMeshSurface.cs",
+              "RelativeDocumentMoniker": "Assets\\NavMeshComponents\\Scripts\\NavMeshSurface.cs",
+              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\NavMeshComponents\\Scripts\\NavMeshSurface.cs",
+              "RelativeToolTip": "Assets\\NavMeshComponents\\Scripts\\NavMeshSurface.cs",
+              "ViewState": "AQIAAJwAAAAAAAAAAAAcwKsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T08:49:50.816Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BaseEnemy.cs",
+              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Enemy\\BaseEnemy.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\BaseEnemy.cs",
+              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Enemy\\BaseEnemy.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enemy\\BaseEnemy.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAADwvyMAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T07:36:58.358Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
