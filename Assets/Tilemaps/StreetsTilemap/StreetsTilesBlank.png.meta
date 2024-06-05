@@ -1,0 +1,521 @@
+fileFormatVersion: 2
+guid: c81c5909ad20f8042a05762ee6b7ea1d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1861403868612239622
+    second: StreetsTilesBlank_7
+  - first:
+      213: 9132018753568323454
+    second: StreetsTilesBlank_8
+  - first:
+      213: 8405597596822012196
+    second: StreetsTilesBlank_9
+  - first:
+      213: 7016276111364123309
+    second: StreetsTilesBlank_10
+  - first:
+      213: -6009815309662234795
+    second: StreetsTilesBlank_13
+  - first:
+      213: 8836880810459556267
+    second: StreetsTilesBlank_14
+  - first:
+      213: 1593506717721568512
+    second: StreetsTilesBlank_15
+  - first:
+      213: 4914305660329352032
+    second: StreetsTilesBlank_17
+  - first:
+      213: -1368050465110458613
+    second: StreetsTilesBlank_18
+  - first:
+      213: -2962841655516231929
+    second: StreetsTilesBlank_21
+  - first:
+      213: 2521275877816528579
+    second: StreetsTilesBlank_22
+  - first:
+      213: 6197455592898854612
+    second: StreetsTilesBlank_23
+  - first:
+      213: -8077805469566416794
+    second: StreetsTilesBlank_25
+  - first:
+      213: 3869115123319473907
+    second: StreetsTilesBlank_26
+  - first:
+      213: -7547401572903757086
+    second: StreetsTilesBlank_27
+  - first:
+      213: 3033510922866881522
+    second: StreetsTilesBlank_28
+  - first:
+      213: 8735985614548733107
+    second: StreetsTilesBlank_32
+  - first:
+      213: 8029485839358693907
+    second: StreetsTilesBlank_33
+  - first:
+      213: -11323411061762269
+    second: StreetsTilesBlank_0
+  - first:
+      213: 7598296620405180780
+    second: StreetsTilesBlank_1
+  - first:
+      213: 493570653879375642
+    second: StreetsTilesBlank_2
+  - first:
+      213: 7988500885502290748
+    second: StreetsTilesBlank_3
+  - first:
+      213: 7191271556108389332
+    second: StreetsTilesBlank_4
+  - first:
+      213: 788923688551607917
+    second: StreetsTilesBlank_5
+  - first:
+      213: -3066174054664243904
+    second: StreetsTilesBlank_6
+  - first:
+      213: -4328116093762317471
+    second: StreetsTilesBlank_11
+  - first:
+      213: -3299948646410625580
+    second: StreetsTilesBlank_12
+  - first:
+      213: -5440448697005924076
+    second: StreetsTilesBlank_16
+  - first:
+      213: 4409223718842789385
+    second: StreetsTilesBlank_19
+  - first:
+      213: 683424843290164795
+    second: StreetsTilesBlank_20
+  - first:
+      213: 8176277442663500718
+    second: StreetsTilesBlank_24
+  - first:
+      213: 689205416953182645
+    second: StreetsTilesBlank_29
+  - first:
+      213: 5612677048435285730
+    second: StreetsTilesBlank_30
+  - first:
+      213: 4484597104674868725
+    second: StreetsTilesBlank_31
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: StreetsTilesBlank_7
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 291
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 601ab24d4f805d910800000000000000
+      internalID: 1861403868612239622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetsTilesBlank_8
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 292
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7735a04ca27bbe70800000000000000
+      internalID: 9132018753568323454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetsTilesBlank_9
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 289
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4210473ca7ea6a470800000000000000
+      internalID: 8405597596822012196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetsTilesBlank_10
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 289
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daaeaef03f1de5160800000000000000
+      internalID: 7016276111364123309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetsTilesBlank_13
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 219
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 557d0e531d8d89ca0800000000000000
+      internalID: -6009815309662234795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetsTilesBlank_14
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 219
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba968edf648e2aa70800000000000000
+      internalID: 8836880810459556267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetsTilesBlank_15
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 217
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0052ef0cae54d1610800000000000000
+      internalID: 1593506717721568512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetsTilesBlank_21
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 146
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 707893d463fd1e6d0800000000000000
+      internalID: -2962841655516231929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetsTilesBlank_22
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 145
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cee3067d0f5df220800000000000000
+      internalID: 2521275877816528579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetsTilesBlank_25
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 75
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66849c539bed5ef80800000000000000
+      internalID: -8077805469566416794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetsTilesBlank_27
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 30
+        width: 96
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ead8ddd14e324790800000000000000
+      internalID: -7547401572903757086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetsTilesBlank_16
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 217
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411a93c1cb4af74b0800000000000000
+      internalID: -5440448697005924076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetsTilesBlank_19
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 147
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ee9d87c95b03d30800000000000000
+      internalID: 4409223718842789385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetsTilesBlank_20
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 147
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3ebcf626430c7900800000000000000
+      internalID: 683424843290164795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StreetsTilesBlank_30
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 75
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ee19fec90c34ed40800000000000000
+      internalID: 5612677048435285730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
