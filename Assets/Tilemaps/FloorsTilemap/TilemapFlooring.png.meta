@@ -26,6 +26,21 @@ TextureImporter:
   - first:
       213: 8831764838252131658
     second: TilemapFlooring_7
+  - first:
+      213: 5234699970120754711
+    second: TilemapFlooring_8
+  - first:
+      213: -3904675763784069595
+    second: TilemapFlooring_9
+  - first:
+      213: -5776788744096019975
+    second: TilemapFlooring_10
+  - first:
+      213: 7390637447165008316
+    second: TilemapFlooring_11
+  - first:
+      213: -14919152956591206
+    second: TilemapFlooring_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -111,53 +126,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TilemapFlooring_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 272
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a36dadd79d1728f0800000000000000
-      internalID: -565450690115312736
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilemapFlooring_3
+      name: TilemapFlooring_5
       rect:
         serializedVersion: 2
         x: 192
         y: 272
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c40e5cd1236bdd9b0800000000000000
-      internalID: -5053682880475701172
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilemapFlooring_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 144
         width: 64
         height: 64
       alignment: 0
@@ -174,7 +147,70 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapFlooring_6
+      name: TilemapFlooring_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 272
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a13a3c7d95b1ab0800000000000000
+      internalID: -5036332975048680888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilemapFlooring_7
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 272
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a45bdc3e35bb09a70800000000000000
+      internalID: 8831764838252131658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilemapFlooring_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 144
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f98ea57e39b4dfa0800000000000000
+      internalID: -5776788744096019975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilemapFlooring_11
       rect:
         serializedVersion: 2
         x: 192
@@ -188,8 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 362202cdfddcd7b10800000000000000
-      internalID: 1980965772467380835
+      spriteID: cb958f5d991d09660800000000000000
+      internalID: 7390637447165008316
       vertices: []
       indices: 
       edges: []
