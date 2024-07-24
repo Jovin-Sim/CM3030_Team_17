@@ -13,10 +13,10 @@ TagManager:
   - UI
   - 
   - 
-  - Sprites
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Floor
+  - Wall
   - 
   - 
   - 

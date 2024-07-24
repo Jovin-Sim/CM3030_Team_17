@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6851279424471048789}
   - component: {fileID: 657201896805340323}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Steadying Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3221852936897214683}
   - component: {fileID: 7150177154197766779}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gripping Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,10 +172,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6587478555167051417}
+  - component: {fileID: 9131304433267485168}
   - component: {fileID: 2212729172272542634}
   - component: {fileID: 6443597062865137054}
   - component: {fileID: 3865197692755765220}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,6 +201,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9131304433267485168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3217689771878625656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40039a4726d2afa4c8aa1447f83de261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMoveSpeed: 0
+  originalMoveSpeed: 2
+  rotationSpeed: 30
+  canMove: 1
+  target: {fileID: 0}
 --- !u!212 &2212729172272542634
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -271,7 +289,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &3865197692755765220
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -298,7 +316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3094575384320853734}
   - component: {fileID: 3809331490700192255}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LMG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3626008580953694676}
   - component: {fileID: 6868032806718836165}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Backpack
   m_TagString: Untagged
   m_Icon: {fileID: 0}

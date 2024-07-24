@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3186172742681442956}
   - component: {fileID: 4472785631805146549}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gripping Arm (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4357908496406216733}
   - component: {fileID: 8356073554830162621}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gripping Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,10 +173,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5451422928195417695}
+  - component: {fileID: 5802695417679687263}
   - component: {fileID: 1042871284126403436}
   - component: {fileID: 4528267594521248156}
-  - component: {fileID: 2343031796220284050}
-  m_Layer: 0
+  - component: {fileID: 5714373731302667758}
+  m_Layer: 9
   m_Name: Zombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,6 +200,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5802695417679687263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4353770627799583166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12ea0bc89dd01b4696446d82e67ecf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentAccel: 0
+  originalAccel: 2
+  rotationSpeed: 30
+  tolerance: 0
+  target: {fileID: 0}
 --- !u!212 &1042871284126403436
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -270,9 +288,9 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!70 &2343031796220284050
-CapsuleCollider2D:
+  m_Constraints: 4
+--- !u!58 &5714373731302667758
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -284,6 +302,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000045218965, y: 0.4}
-  m_Size: {x: 2.8858771, y: 2.4741929}
-  m_Direction: 1
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1

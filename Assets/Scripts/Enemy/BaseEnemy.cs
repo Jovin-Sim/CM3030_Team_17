@@ -6,50 +6,100 @@ public class BaseEnemy : MonoBehaviour
 {
     int id = 0;
     Vector3 startingPosition;
-
     Rigidbody2D rb2d;
 
-    [SerializeField] float currentMoveSpeed;
-    [SerializeField] float originalMoveSpeed = 0f;
-    [SerializeField] float rotationSpeed = 0f;
-    [SerializeField] bool canMove = true;
+    Pathfinding pathfinding;
+    Vector3[] path;
+    int targetIndex;
+
+    [SerializeField] float currentAccel;
+    [SerializeField] float originalAccel = 1f;
+    [SerializeField] float rotationSpeed = 30f;
+    [SerializeField] float tolerance = 0f;
 
     [SerializeField] Collider2D target = null;
 
-    private void Awake()
+    void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-
-        currentMoveSpeed = originalMoveSpeed;
+        tolerance = GetComponent<SpriteRenderer>().bounds.extents.x;
+        currentAccel = originalAccel;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        pathfinding = FindObjectOfType<Pathfinding>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        RotateTowardsTarget();
-        SetVelocity();
+        if (target == null) return;
+
+        if (path == null) UpdatePath();
+
+        FollowPath();
     }
 
-    void RotateTowardsTarget()
+    void UpdatePath()
     {
-        if (!canMove || !target) return;
+        if (pathfinding == null || target == null) return;
 
-        Quaternion targetRotation = Quaternion.LookRotation(transform.forward, target.transform.position);
-        Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-
-        rb2d.SetRotation(rotation);
+        path = pathfinding.AStarPathfinding(transform.position, target.transform.position, tolerance * 2);
+        targetIndex = 0;
     }
 
-    void SetVelocity()
+    void FollowPath()
     {
-        if (!canMove) return;
-        
-        rb2d.velocity = transform.up * currentMoveSpeed;
+        if (path == null || path.Length == 0) return;
+
+        if (Vector2.Distance(transform.position, target.transform.position) <= tolerance * 2) return;
+
+        if (targetIndex >= path.Length) return;
+
+        Vector3 currentWaypoint = path[targetIndex];
+
+        if (Vector2.Distance(transform.position, currentWaypoint) <= tolerance)
+        {
+            targetIndex++;
+            if (targetIndex >= path.Length)
+            {
+                rb2d.velocity = Vector2.Lerp(rb2d.velocity, Vector3.zero, Time.deltaTime * currentAccel);
+                return;
+            }
+            currentWaypoint = path[targetIndex];
+        }
+
+        Vector2 direction = (currentWaypoint - transform.position).normalized;
+        rb2d.velocity = Vector2.Lerp(rb2d.velocity, direction, Time.deltaTime * currentAccel);
+        RotateTowards(currentWaypoint);
+    }
+
+    void RotateTowards(Vector3 targetPosition)
+    {
+        Vector2 direction = (targetPosition - transform.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+        float angleDifference = Mathf.DeltaAngle(rb2d.rotation, angle);
+
+        float rotationThreshold = 12.0f; // Define a threshold for micro-rotations
+
+        if (Mathf.Abs(angleDifference) > rotationThreshold)
+        {
+            float targetAngle = Mathf.MoveTowardsAngle(rb2d.rotation, angle, rotationSpeed * Time.deltaTime);
+            rb2d.rotation = targetAngle;
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        if (path == null) return;
+
+        for (int i = targetIndex; i < path.Length; ++i)
+        {
+            Gizmos.color = Color.black;
+            Gizmos.DrawCube(path[i], Vector3.one * 0.1f);
+
+            if (i == targetIndex) Gizmos.DrawLine(transform.position, path[i]);
+            else Gizmos.DrawLine(path[i - 1], path[i]);
+        }
     }
 }
