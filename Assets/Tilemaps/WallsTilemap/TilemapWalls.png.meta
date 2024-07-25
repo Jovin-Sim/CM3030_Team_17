@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7bc42b0d9ad6db540b4a63a35bffca8b
+guid: 7ee8032acbe293c49a414dc06ee84356
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -98,12 +98,6 @@ TextureImporter:
   - first:
       213: -2012558074182124246
     second: TilemapWalls_31
-  - first:
-      213: 6557870865223279800
-    second: TilemapWalls_32
-  - first:
-      213: 7997599326343730027
-    second: TilemapWalls_33
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -197,7 +191,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -213,12 +207,12 @@ TextureImporter:
       name: TilemapWalls_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 128
         y: 336
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -234,12 +228,12 @@ TextureImporter:
       name: TilemapWalls_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 192
         y: 336
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -255,12 +249,12 @@ TextureImporter:
       name: TilemapWalls_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 256
         y: 336
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -276,12 +270,12 @@ TextureImporter:
       name: TilemapWalls_4
       rect:
         serializedVersion: 2
-        x: 256
+        x: 320
         y: 336
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -297,12 +291,12 @@ TextureImporter:
       name: TilemapWalls_5
       rect:
         serializedVersion: 2
-        x: 320
-        y: 336
+        x: 0
+        y: 272
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -318,12 +312,12 @@ TextureImporter:
       name: TilemapWalls_6
       rect:
         serializedVersion: 2
-        x: 0
+        x: 64
         y: 272
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -339,12 +333,12 @@ TextureImporter:
       name: TilemapWalls_7
       rect:
         serializedVersion: 2
-        x: 65
+        x: 128
         y: 272
-        width: 63
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -360,12 +354,12 @@ TextureImporter:
       name: TilemapWalls_8
       rect:
         serializedVersion: 2
-        x: 128
+        x: 192
         y: 272
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -381,12 +375,12 @@ TextureImporter:
       name: TilemapWalls_9
       rect:
         serializedVersion: 2
-        x: 192
+        x: 256
         y: 272
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -402,12 +396,12 @@ TextureImporter:
       name: TilemapWalls_10
       rect:
         serializedVersion: 2
-        x: 256
+        x: 320
         y: 272
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -423,12 +417,12 @@ TextureImporter:
       name: TilemapWalls_11
       rect:
         serializedVersion: 2
-        x: 320
-        y: 272
+        x: 0
+        y: 208
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -444,12 +438,12 @@ TextureImporter:
       name: TilemapWalls_12
       rect:
         serializedVersion: 2
-        x: 0
+        x: 64
         y: 208
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -465,12 +459,12 @@ TextureImporter:
       name: TilemapWalls_13
       rect:
         serializedVersion: 2
-        x: 64
+        x: 128
         y: 208
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -486,12 +480,12 @@ TextureImporter:
       name: TilemapWalls_14
       rect:
         serializedVersion: 2
-        x: 128
+        x: 192
         y: 208
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -507,12 +501,12 @@ TextureImporter:
       name: TilemapWalls_15
       rect:
         serializedVersion: 2
-        x: 192
+        x: 256
         y: 208
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -528,12 +522,12 @@ TextureImporter:
       name: TilemapWalls_16
       rect:
         serializedVersion: 2
-        x: 256
+        x: 320
         y: 208
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -549,12 +543,12 @@ TextureImporter:
       name: TilemapWalls_17
       rect:
         serializedVersion: 2
-        x: 320
-        y: 208
+        x: 0
+        y: 144
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -570,12 +564,12 @@ TextureImporter:
       name: TilemapWalls_18
       rect:
         serializedVersion: 2
-        x: 0
+        x: 64
         y: 144
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -591,12 +585,12 @@ TextureImporter:
       name: TilemapWalls_19
       rect:
         serializedVersion: 2
-        x: 64
+        x: 128
         y: 144
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -612,12 +606,12 @@ TextureImporter:
       name: TilemapWalls_20
       rect:
         serializedVersion: 2
-        x: 128
+        x: 192
         y: 144
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -633,12 +627,12 @@ TextureImporter:
       name: TilemapWalls_21
       rect:
         serializedVersion: 2
-        x: 192
+        x: 256
         y: 144
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -654,12 +648,12 @@ TextureImporter:
       name: TilemapWalls_22
       rect:
         serializedVersion: 2
-        x: 256
+        x: 320
         y: 144
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -675,12 +669,12 @@ TextureImporter:
       name: TilemapWalls_23
       rect:
         serializedVersion: 2
-        x: 320
-        y: 144
+        x: 64
+        y: 80
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -696,12 +690,12 @@ TextureImporter:
       name: TilemapWalls_24
       rect:
         serializedVersion: 2
-        x: 64
+        x: 192
         y: 80
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -717,12 +711,12 @@ TextureImporter:
       name: TilemapWalls_25
       rect:
         serializedVersion: 2
-        x: 128
+        x: 256
         y: 80
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -738,12 +732,12 @@ TextureImporter:
       name: TilemapWalls_26
       rect:
         serializedVersion: 2
-        x: 192
+        x: 320
         y: 80
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -759,12 +753,12 @@ TextureImporter:
       name: TilemapWalls_27
       rect:
         serializedVersion: 2
-        x: 256
-        y: 80
+        x: 64
+        y: 16
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -780,12 +774,12 @@ TextureImporter:
       name: TilemapWalls_28
       rect:
         serializedVersion: 2
-        x: 320
-        y: 80
+        x: 128
+        y: 16
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -801,12 +795,12 @@ TextureImporter:
       name: TilemapWalls_29
       rect:
         serializedVersion: 2
-        x: 64
+        x: 192
         y: 16
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -822,12 +816,12 @@ TextureImporter:
       name: TilemapWalls_30
       rect:
         serializedVersion: 2
-        x: 128
+        x: 256
         y: 16
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -843,12 +837,12 @@ TextureImporter:
       name: TilemapWalls_31
       rect:
         serializedVersion: 2
-        x: 192
+        x: 320
         y: 16
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -856,48 +850,6 @@ TextureImporter:
       bones: []
       spriteID: a2db7823815f114e0800000000000000
       internalID: -2012558074182124246
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilemapWalls_32
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 16
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b4648c8ecc320b50800000000000000
-      internalID: 6557870865223279800
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilemapWalls_33
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 16
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b631f96d63e2dfe60800000000000000
-      internalID: 7997599326343730027
       vertices: []
       indices: 
       edges: []
