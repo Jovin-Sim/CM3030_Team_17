@@ -212,9 +212,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12ea0bc89dd01b4696446d82e67ecf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentAccel: 0
-  originalAccel: 2
-  rotationSpeed: 30
+  maxHp: 0
+  currHp: 0
+  originalAtk: 0
+  currAtk: 0
+  atkCd: 0
+  lastAtkTime: 0
+  currAccel: 0
+  originalAccel: 4
+  rotationSpeed: 180
   tolerance: 0
   target: {fileID: 0}
 --- !u!212 &1042871284126403436
