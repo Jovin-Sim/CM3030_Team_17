@@ -4,52 +4,29 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    int id = 0;
-    Vector3 startingPosition;
+    public float moveSpeed = 5f;
 
-    Rigidbody2D rb2d;
+    public Rigidbody2D rb;
+    public Camera cam;
 
-    [SerializeField] float currentMoveSpeed;
-    [SerializeField] float originalMoveSpeed = 0f;
-    [SerializeField] float rotationSpeed = 0f;
-    [SerializeField] bool canMove = true;
+    Vector2 movement;
+    Vector2 mousePos;
 
-    [SerializeField] Collider2D target = null;
 
-    private void Awake()
-    {
-        rb2d = GetComponent<Rigidbody2D>();
-
-        currentMoveSpeed = originalMoveSpeed;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        RotateTowardsTarget();
-        SetVelocity();
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    void RotateTowardsTarget()
+    void FixedUpdate()
     {
-        if (!canMove || !target) return;
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-        Quaternion targetRotation = Quaternion.LookRotation(transform.forward, target.transform.position);
-        Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-
-        rb2d.SetRotation(rotation);
-    }
-
-    void SetVelocity()
-    {
-        if (!canMove) return;
-
-        rb2d.velocity = transform.up * currentMoveSpeed;
+        Vector2 lookDir = mousePos - rb.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = angle;
     }
 }
