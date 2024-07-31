@@ -8,7 +8,7 @@ using UnityEngine.Tilemaps;
 
 public class GridNodes : MonoBehaviour
 {
-    [SerializeField] Grid grid;
+    [SerializeField] Grid grid = null;
     Dictionary<Vector3, Node> allNodes = new Dictionary<Vector3, Node>();
     Dictionary<Vector3Int, Dictionary<Vector3, Node>> partitionedNodes = new Dictionary<Vector3Int, Dictionary<Vector3, Node>>();
 
@@ -85,9 +85,9 @@ public class GridNodes : MonoBehaviour
 
     List<Tilemap> RetrieveTilemapsFromGrid()
     {
-        if (grid == null) return null;
-
         List<Tilemap> tilemaps = new List<Tilemap>();
+        if (grid == null) return tilemaps;
+
         tilemaps.AddRange(grid.GetComponentsInChildren<Tilemap>());
         return tilemaps;
     }

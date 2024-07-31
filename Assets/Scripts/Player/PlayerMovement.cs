@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -15,8 +14,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float rotationSpeed = 0f;
     [SerializeField] bool canMove = true;
     Vector2 movement;
-
-    [SerializeField] Collider2D target = null;
 
     private void Awake()
     {
