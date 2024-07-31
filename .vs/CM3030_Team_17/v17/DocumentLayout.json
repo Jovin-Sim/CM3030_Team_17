@@ -3,32 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\assets\\scripts\\map\\pathfindingnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\map\\pathfindingnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\assets\\scripts\\enemy\\baseenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\baseenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|c:\\users\\cindy\\onedrive\\documents\\github\\cm3030_team_17\\assets\\scripts\\enemy\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\assets\\scripts\\map\\gridnodes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\map\\gridnodes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\assets\\scripts\\gameplaymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameplaymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|c:\\users\\cindy\\onedrive\\documents\\github\\cm3030_team_17\\assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\assets\\scripts\\map\\pathfinding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\map\\pathfinding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|c:\\users\\cindy\\onedrive\\documents\\github\\cm3030_team_17\\assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|c:\\users\\cindy\\onedrive\\documents\\github\\cm3030_team_17\\assets\\scripts\\map\\gridnodes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\map\\gridnodes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|c:\\users\\cindy\\onedrive\\documents\\github\\cm3030_team_17\\assets\\shooting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\shooting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|c:\\users\\cindy\\onedrive\\documents\\github\\cm3030_team_17\\assets\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,91 +38,68 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "GridNodes.cs",
               "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Map\\GridNodes.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Map\\GridNodes.cs",
               "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Map\\GridNodes.cs",
               "RelativeToolTip": "Assets\\Scripts\\Map\\GridNodes.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD4AAAA2AAAA",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAAwFcAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-31T05:13:12.218Z",
+              "WhenOpened": "2024-07-31T14:01:43.172Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Pathfinding.cs",
-              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Map\\Pathfinding.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Map\\Pathfinding.cs",
-              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Map\\Pathfinding.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Map\\Pathfinding.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADgAAAAJAAAA",
+              "DocumentIndex": 3,
+              "Title": "Shooting.cs",
+              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Shooting.cs",
+              "RelativeDocumentMoniker": "Assets\\Shooting.cs",
+              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Shooting.cs",
+              "RelativeToolTip": "Assets\\Shooting.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T13:01:14.261Z"
+              "WhenOpened": "2024-07-31T13:51:58.754Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "GameplayManager.cs",
-              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\GameplayManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameplayManager.cs",
-              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\GameplayManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameplayManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAAhAAAA",
+              "Title": "Bullet.cs",
+              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Bullet.cs",
+              "RelativeDocumentMoniker": "Assets\\Bullet.cs",
+              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Bullet.cs",
+              "RelativeToolTip": "Assets\\Bullet.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T09:09:06.742Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EnemySpawner.cs",
-              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Enemy\\EnemySpawner.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\EnemySpawner.cs",
-              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Enemy\\EnemySpawner.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Enemy\\EnemySpawner.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwDMAAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T09:08:07.068Z",
+              "WhenOpened": "2024-07-31T13:51:58.312Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PathfindingNode.cs",
-              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Map\\PathfindingNode.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Map\\PathfindingNode.cs",
-              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Map\\PathfindingNode.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Map\\PathfindingNode.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T13:01:15.152Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BaseEnemy.cs",
-              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Enemy\\BaseEnemy.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\BaseEnemy.cs",
-              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Enemy\\BaseEnemy.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Enemy\\BaseEnemy.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T07:36:58.358Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Player\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerMovement.cs",
               "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Player\\PlayerMovement.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerMovement.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAASAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T09:24:29.283Z"
+              "WhenOpened": "2024-07-31T13:51:56.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Player\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerController.cs",
+              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Player\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T13:51:56.141Z",
+              "EditorCaption": ""
             }
           ]
         }
