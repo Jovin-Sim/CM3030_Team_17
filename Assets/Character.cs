@@ -55,6 +55,10 @@ public class Character : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
         armourBar.SetHealth(currentArmour);
+        if(currentArmour == 0)
+        {
+
+        }
     }
 
     public void Heal(int amount)

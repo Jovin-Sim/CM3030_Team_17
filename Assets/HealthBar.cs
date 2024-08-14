@@ -47,4 +47,9 @@ public class HealthBar : MonoBehaviour
         }
     }
 
+    public void toggleVisibility(bool isVisible)
+    {
+
+    }
+
 }
