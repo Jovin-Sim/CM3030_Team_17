@@ -91,6 +91,7 @@ public class Combat : MonoBehaviour
             GameplayManager.instance.GameOver();
             return;
         }
+        GameplayManager.instance.enemyManager.DespawnEnemy(gameObject);
         Destroy(gameObject);
     }
 }

@@ -64,7 +64,6 @@ public class PathBasedMovement : MonoBehaviour
     {
         // Do nothing if no such class was found or if there is no target
         if (GameplayManager.instance == null || GameplayManager.instance.pathfinding == null || target == null) return;
-        Debug.Log("Computing path");
 
         // Compute the path
         path = GameplayManager.instance.pathfinding.AStarPathfinding(transform.position, target.transform.position, tolerance * 2);

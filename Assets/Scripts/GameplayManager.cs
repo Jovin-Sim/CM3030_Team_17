@@ -8,7 +8,7 @@ public class GameplayManager : MonoBehaviour
 
     public GridNodes gridNodes = null;
     public Pathfinding pathfinding = null;
-    public EnemyManager enemySpawner = null;
+    public EnemyManager enemyManager = null;
 
     PlayerController player = null;
 
@@ -31,7 +31,7 @@ public class GameplayManager : MonoBehaviour
 
         gridNodes = GetComponent<GridNodes>();
         pathfinding = GetComponent<Pathfinding>();
-        enemySpawner = GetComponent<EnemyManager>();
+        enemyManager = GetComponent<EnemyManager>();
 
         player = FindObjectOfType<PlayerController>();
     }

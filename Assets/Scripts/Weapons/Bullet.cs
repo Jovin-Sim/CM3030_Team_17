@@ -37,6 +37,9 @@ public class Bullet : MonoBehaviour
         if (aliveCoroutine != null) StopCoroutine(aliveCoroutine);
         if (collision.TryGetComponent<Combat>(out Combat entity)) entity.TakeDamage(damage);
         if (pierce) return;
+
+        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 0.25f);
         Destroy(gameObject);
-   }
+    }
 }

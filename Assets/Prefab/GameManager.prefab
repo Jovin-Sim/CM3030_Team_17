@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2751082348333265009}
   - component: {fileID: 2751082348333265008}
   - component: {fileID: 2751082348333265011}
-  - component: {fileID: 2751082348333265010}
+  - component: {fileID: 8117938156618623920}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridNodes: {fileID: 2751082348333265008}
   pathfinding: {fileID: 2751082348333265011}
-  enemySpawner: {fileID: 2751082348333265010}
+  enemySpawner: {fileID: 8117938156618623920}
 --- !u!114 &2751082348333265008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76f3c997076dc5c4e8b6430632c16141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2751082348333265010
+--- !u!114 &8117938156618623920
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,14 +92,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2751082348333265012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95a38f5a770126c4781e95b3bbf6d967, type: 3}
+  m_Script: {fileID: 11500000, guid: 060486fd1cf304346bd87e7d38da5dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyNames:
-  - Base Enemy
+  - Zombie
   enemyPrefabs:
   - {fileID: 4353770627799583166, guid: 43a8e0f1ecdac0f40a96400f557aceb8, type: 3}
   enemies: []
   maxEnemyCount: 10
-  maxSpawnAmount: 5
+  maxSpawnAmount: 3
   spawnIInterval: 3

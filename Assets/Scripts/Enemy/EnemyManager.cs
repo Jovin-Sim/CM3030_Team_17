@@ -59,4 +59,9 @@ public class EnemyManager : MonoBehaviour
         return keys[Random.Range(0, keys.Count)];
     }
     #endregion
+
+    public void DespawnEnemy(GameObject enemy)
+    {
+        if (enemies.Contains(enemy)) enemies.Remove(enemy);
+    }
 }
