@@ -101,8 +101,25 @@ public class Pathfinding : MonoBehaviour
 
                     if (!openList.Contains(neighbor)) openList.Add(neighbor);
                 }
-            } 
+            }
         }
+
+        // If the loop exits without finding a path, find the closest node to the endNode
+        Node closestNode = null;
+        float closestDistance = float.MaxValue;
+
+        foreach (Node node in closedList)
+        {
+            float distance = gridNodes.GetDistanceCost(node, endNode);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestNode = node;
+            }
+        }
+
+        if (closestNode != null) return RetracePath(startNode, closestNode);
+
         return null;
     }
 

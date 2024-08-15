@@ -8,9 +8,9 @@ public class GameplayManager : MonoBehaviour
 
     public GridNodes gridNodes = null;
     public Pathfinding pathfinding = null;
-    public EnemySpawner enemySpawner = null;
+    public EnemyManager enemySpawner = null;
 
-    PlayerMovement player = null;
+    PlayerController player = null;
 
     private void Awake()
     {
@@ -31,10 +31,16 @@ public class GameplayManager : MonoBehaviour
 
         gridNodes = GetComponent<GridNodes>();
         pathfinding = GetComponent<Pathfinding>();
-        enemySpawner = GetComponent<EnemySpawner>();
+        enemySpawner = GetComponent<EnemyManager>();
 
-        player = FindObjectOfType<PlayerMovement>();
+        player = FindObjectOfType<PlayerController>();
     }
 
-    public PlayerMovement Player { get { return player; } }
+    public PlayerController Player { get { return player; } }
+
+    public void GameOver()
+    {
+        if (player == null) return;
+        player.GameOver();
+    }    
 }

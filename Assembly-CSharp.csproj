@@ -56,16 +56,19 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Bullet.cs" />
+    <Compile Include="Assets\Prefab\Player\PlayerAC.cs" />
+    <Compile Include="Assets\Scripts\Combat.cs" />
     <Compile Include="Assets\Scripts\Enemy\BaseEnemy.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyManager.cs" />
+    <Compile Include="Assets\Scripts\Enemy\PathBasedMovement.cs" />
     <Compile Include="Assets\Scripts\GameplayManager.cs" />
+    <Compile Include="Assets\Scripts\Interactables\Lure.cs" />
+    <Compile Include="Assets\Scripts\Map\BuildingLogic.cs" />
     <Compile Include="Assets\Scripts\Map\GridNodes.cs" />
     <Compile Include="Assets\Scripts\Map\Pathfinding.cs" />
     <Compile Include="Assets\Scripts\Map\PathfindingNode.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
-    <Compile Include="Assets\Shooting.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Bullet.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
