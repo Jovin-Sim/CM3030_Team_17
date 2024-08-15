@@ -6,7 +6,7 @@ public class GameplayManager : MonoBehaviour
 {
     public static GameplayManager instance = null;
 
-    public GridNodes gridNodes = null;
+    public GridMap gridMap = null;
     public Pathfinding pathfinding = null;
     public EnemyManager enemyManager = null;
 
@@ -29,7 +29,7 @@ public class GameplayManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        gridNodes = GetComponent<GridNodes>();
+        gridMap = GetComponent<GridMap>();
         pathfinding = GetComponent<Pathfinding>();
         enemyManager = GetComponent<EnemyManager>();
 

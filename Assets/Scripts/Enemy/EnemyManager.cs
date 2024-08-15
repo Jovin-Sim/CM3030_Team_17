@@ -43,7 +43,7 @@ public class EnemyManager : MonoBehaviour
         for (int i = 0; i < amount; ++i)
         {
             float enemySize = enemyTypes[enemyName].GetComponent<PathBasedMovement>().Tolerance;
-            Vector3 pos = GameplayManager.instance.gridNodes.GetEmptyPosition(enemySize);
+            Vector3 pos = GameplayManager.instance.gridMap.GetEmptyPosition(enemySize);
             if (pos == Vector3.zero) continue;
 
             GameObject enemy = Instantiate(enemyTypes[enemyName], pos, Quaternion.identity);

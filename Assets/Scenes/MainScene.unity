@@ -12654,16 +12654,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2751082348333265008, guid: 7c4bc5a36f9f0bc42bbaff03a0d9aaf1,
-        type: 3}
-      propertyPath: grid
-      value: 
-      objectReference: {fileID: 106146709}
-    - target: {fileID: 2751082348333265008, guid: 7c4bc5a36f9f0bc42bbaff03a0d9aaf1,
-        type: 3}
-      propertyPath: showNodes
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2751082348333265012, guid: 7c4bc5a36f9f0bc42bbaff03a0d9aaf1,
         type: 3}
       propertyPath: m_Name
@@ -12723,6 +12713,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985122980790473745, guid: 7c4bc5a36f9f0bc42bbaff03a0d9aaf1,
+        type: 3}
+      propertyPath: grid
+      value: 
+      objectReference: {fileID: 106146709}
+    - target: {fileID: 5985122980790473745, guid: 7c4bc5a36f9f0bc42bbaff03a0d9aaf1,
+        type: 3}
+      propertyPath: showNodes
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985122980790473745, guid: 7c4bc5a36f9f0bc42bbaff03a0d9aaf1,
+        type: 3}
+      propertyPath: obstacleLayer.m_Bits
+      value: 2048
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c4bc5a36f9f0bc42bbaff03a0d9aaf1, type: 3}

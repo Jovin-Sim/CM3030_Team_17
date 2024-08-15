@@ -50,7 +50,7 @@ public class PathBasedMovement : MonoBehaviour
     {
         // Update the path if there is a target but no path to it
         if (path == null && target != null) UpdatePath();
-        if (prevTargetPos != target.transform.position && targetNode != GameplayManager.instance.gridNodes.GetClosestNode(target.transform.position)) UpdatePath();
+        if (prevTargetPos != target.transform.position && targetNode != GameplayManager.instance.gridMap.GetClosestNode(target.transform.position)) UpdatePath();
         // Follow the path
         FollowPath();
 
@@ -65,14 +65,16 @@ public class PathBasedMovement : MonoBehaviour
         // Do nothing if no such class was found or if there is no target
         if (GameplayManager.instance == null || GameplayManager.instance.pathfinding == null || target == null) return;
 
+        Debug.Log("Updating path");
+
         // Compute the path
-        path = GameplayManager.instance.pathfinding.AStarPathfinding(transform.position, target.transform.position, tolerance * 2);
+        path = GameplayManager.instance.pathfinding.AStarPathfinding(transform.position, target.transform.position);
 
         // No path was found, do nothing
         if (path == null) return;
 
         // Get the closest node to the target
-        targetNode = GameplayManager.instance.gridNodes.GetClosestNode(path[path.Length - 1]);
+        targetNode = GameplayManager.instance.gridMap.GetClosestNode(path[path.Length - 1]);
 
         // Set the starting index to 0
         targetIndex = 0;

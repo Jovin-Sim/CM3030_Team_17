@@ -5,13 +5,13 @@ using UnityEngine.Tilemaps;
 
 public class Pathfinding : MonoBehaviour
 {
-    GridNodes gridNodes;
+    GridMap gridNodes;
     List<Node> openList;
     List<Node> closedList;
 
     void Start()
     {
-        gridNodes = GetComponent<GridNodes>();
+        gridNodes = GetComponent<GridMap>();
         openList = new List<Node>();
         closedList = new List<Node>();
     }
@@ -78,8 +78,13 @@ public class Pathfinding : MonoBehaviour
 
         openList.Add(startNode);
 
+        int numCount = 0;
+
         while (openList.Count > 0)
         {
+            ++numCount;
+            Debug.Log("AStarPathfinding Attempt " + numCount);
+
             Node currNode = GetLowestFCostNode();
 
             if (currNode == endNode) return RetracePath(startNode, endNode);
