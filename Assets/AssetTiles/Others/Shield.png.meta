@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Tiles/surviv/basic asset pack/Basic Undead Animations/Bound Cadaver/BoundCadaver.gif.meta
-guid: a94d60846f8a6bd46b1af33d2aae3014
-========
-guid: 20358f8c93b55324aa5b6c6bf2a91a0a
->>>>>>>> origin/faris:Assets/AssetTiles/Others/Heart.png.meta
+guid: 4c0169c2bc1e8d44cacf2c44ee55fe68
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
