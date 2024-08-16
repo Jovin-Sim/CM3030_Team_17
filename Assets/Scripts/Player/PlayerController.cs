@@ -29,6 +29,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float bulletSpeed = 5f;
     #endregion
 
+    #region Audio Variables
+    [Header("Audio Variables")]
+    AudioManager audioManager;
+    #endregion
+
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -41,6 +46,8 @@ public class PlayerController : MonoBehaviour
         actions.Player.Fire.performed += Fire;
 
         currMoveSpeed = originalMoveSpeed;
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void FixedUpdate()
@@ -80,6 +87,7 @@ public class PlayerController : MonoBehaviour
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * bulletSpeed, ForceMode2D.Impulse);
         if (bullet.TryGetComponent<Bullet>(out Bullet b)) 
             b.Init(combat.CurrAtk);
+            audioManager.PlaySFX(audioManager.gunshot);
     }
 
     public void GameOver()

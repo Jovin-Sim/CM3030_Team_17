@@ -17,6 +17,13 @@ public class Combat : MonoBehaviour
     // The time of the entity's previous attack
     [SerializeField] private float lastAtkTime;
 
+    // Initialize AudioManager
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     #region Getters & Setters
     public int MaxHp
     {
@@ -68,6 +75,7 @@ public class Combat : MonoBehaviour
     public void Attack(Combat otherEntity)
     {
         lastAtkTime = Time.time;
+        audioManager.PlaySFX(audioManager.enemyAttack);
         otherEntity.TakeDamage(currAtk);
     }
 
