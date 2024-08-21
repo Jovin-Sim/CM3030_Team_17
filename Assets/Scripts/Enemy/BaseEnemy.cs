@@ -2,54 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles the enemy's gameplay logic.
+/// </summary>
 public class BaseEnemy : MonoBehaviour
 {
+    // Unique identifier for the entity
     int id = 0;
-    Vector3 startingPosition;
 
-    Rigidbody2D rb2d;
+    [SerializeField] Combat combat;
+    [SerializeField] PathBasedMovement movement;
 
-    [SerializeField] float currentMoveSpeed;
-    [SerializeField] float originalMoveSpeed = 0f;
-    [SerializeField] float rotationSpeed = 0f;
-    [SerializeField] bool canMove = true;
-
+    // The target the entity is chasing
     [SerializeField] Collider2D target = null;
+    public Combat Combat { get { return combat; } }
+    public PathBasedMovement Movement { get { return movement; } }
+    public Collider2D Target 
+    { 
+        get { return target; } 
+        set { 
+            target = value; 
+            if (movement != null) movement.Target = value;
+        } 
+    }
 
     private void Awake()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        combat = GetComponent<Combat>();
+        movement = GetComponent<PathBasedMovement>();
 
-        currentMoveSpeed = originalMoveSpeed;
+        if (target != null) return;
+        target = GameplayManager.instance.Player.GetComponent<Collider2D>();
+        movement.Target = target;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void FixedUpdate()
     {
-        
+        if (target != null) return;
+        target = GameplayManager.instance.Player.GetComponent<Collider2D>();
+        movement.Target = target;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        RotateTowardsTarget();
-        SetVelocity();
-    }
-
-    void RotateTowardsTarget()
-    {
-        if (!canMove || !target) return;
-
-        Quaternion targetRotation = Quaternion.LookRotation(transform.forward, target.transform.position);
-        Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-
-        rb2d.SetRotation(rotation);
-    }
-
-    void SetVelocity()
-    {
-        if (!canMove) return;
-        
-        rb2d.velocity = transform.up * currentMoveSpeed;
+        if (collision.collider == null) return;
+        if (collision.transform.TryGetComponent<Combat>(out Combat otherEntity)) combat.TryAttack(otherEntity);
     }
 }
