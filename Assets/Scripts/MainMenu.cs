@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         // Load the main game scene (replace "GameScene" with your actual scene name)
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("FariScene");
     }
 
     public void ShowInstructions()
