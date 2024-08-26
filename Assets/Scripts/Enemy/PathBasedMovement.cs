@@ -15,8 +15,6 @@ public class PathBasedMovement : MonoBehaviour
     [SerializeField] float currAccel;
     [SerializeField] float originalAccel = 1f;
 
-    // The rotation speed of the entity
-    [SerializeField] float rotationSpeed = 180f;
     // The tolerance for proximity checks between the entity and the nodes or the target
     [SerializeField] float tolerance = 0f;
 
@@ -31,18 +29,13 @@ public class PathBasedMovement : MonoBehaviour
     public int TargetIndex { get { return targetIndex; } }
     public float CurrAccel { get { return currAccel; } set { currAccel = value; } }
     public float Tolerance { get { return tolerance; } }
-    public Collider2D Target 
-    { 
-        get { return target; } 
-        set { 
-            target = value;
-        } 
-    }
+    public Collider2D Target { get { return target; } set {  target = value; } }
 
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        tolerance = GetComponent<SpriteRenderer>().bounds.extents.x;
+        // Set the entity's tolerance in collision checks to be equal to its radius
+        tolerance = GetComponent<CircleCollider2D>().radius;
         currAccel = originalAccel;
     }
 
@@ -50,10 +43,12 @@ public class PathBasedMovement : MonoBehaviour
     {
         // Update the path if there is a target but no path to it
         if (path == null && target != null) UpdatePath();
+        // Update the path if the target's position has changed
         if (prevTargetPos != target.transform.position && targetNode != GameplayManager.instance.gridMap.GetClosestNode(target.transform.position)) UpdatePath();
         // Follow the path
         FollowPath();
 
+        // Set the previous target position as its current position
         prevTargetPos = target.transform.position;
     }
 
@@ -88,7 +83,7 @@ public class PathBasedMovement : MonoBehaviour
         // Do nothing if there is no path or the entity has already reached its target
         if (path == null || path.Length == 0 || targetIndex >= path.Length)
         {
-            // Rotate the entity to face the correct direction
+            // Move the entity towards the waypoint
             MoveTowards(target.transform.position);
             return; 
         }
@@ -96,7 +91,7 @@ public class PathBasedMovement : MonoBehaviour
         // Do nothing if the entity has already reached its target
         if (Vector2.Distance(transform.position, target.transform.position) <= tolerance * 2)
         {
-            // Rotate the entity to face the correct direction
+            // Move the entity towards the waypoint
             MoveTowards(target.transform.position);
             return;
         }
@@ -119,12 +114,12 @@ public class PathBasedMovement : MonoBehaviour
             currentWaypoint = path[targetIndex];
         }
 
-        // Rotate the entity to face the correct direction
+        // Move the entity towards the waypoint
         MoveTowards(currentWaypoint);
     }
 
     /// <summary>
-    /// Moves and rotates the entity towards the target position
+    /// Moves and flips the entity towards the target position
     /// </summary>
     /// <param name="targetPosition">The position that the entity is currently heading towards</param>
     void MoveTowards(Vector3 targetPosition)

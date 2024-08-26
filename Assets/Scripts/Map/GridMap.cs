@@ -8,43 +8,72 @@ using UnityEngine.Tilemaps;
 
 public class GridMap : MonoBehaviour
 {
+    // The grid containing the tilemaps
     [SerializeField] Grid grid = null;
+    // A dictionary of all the nodes in the map
     Dictionary<Vector3, Node> allNodes = new Dictionary<Vector3, Node>();
+    // A dictionary of all the spatially partitioned cells
     Dictionary<Vector3Int, Dictionary<Vector3, Node>> partitionedNodes = new Dictionary<Vector3Int, Dictionary<Vector3, Node>>();
 
+    // The size of each node
     [SerializeField] float nodeSize = 0.25f;
+    // The minimum size the nodes could be
     float minNodeSize = 0.1f;
 
+    // The size of each spatially partitioned cell
     [SerializeField] int cellSize = 1;
+    // The minimum size the cells could be
     int minCellSize = 1;
+    // The opacity of the cells
     [SerializeField] float cellOpacity = 1f;
 
+    // A bool to toggle the display of the nodes
     [SerializeField] bool showNodes = true;
+    // The layers that should be treated as obstacles
     [SerializeField] LayerMask obstacleLayer;
+
+    // The colors that floor and obstacle nodes should have
     [SerializeField] Color floorNodeColor = Color.green;
     [SerializeField] Color obstacleNodeColor = Color.red;
 
+    // The bounds of the entire map
     int minX, minY, maxX, maxY;
 
+    // The cost of straight and diagonal movement
     const int straightMovementCost = 10;
     const int diagonalMovementCost = 14;
 
+    #region Getters & Setters
+    public float NodeSize
+    {
+        get { return nodeSize; }
+        set { nodeSize = value; }
+    }
+
+    public Dictionary<Vector3, Node> AllNodes { get { return allNodes; } }
+    #endregion
+
     void Awake()
     {
+        // Retrieve the grid from the scene
         grid = FindObjectOfType<Grid>();
     }
 
     void Start()
     {
+        // Do nothing if the node or cell size is too small or if the nodes have already been initialized
         if (nodeSize < minNodeSize || cellSize < minCellSize || allNodes.Count > 0) return;
+
+        // Initialize the nodes
         InitializeNodes();
     }
 
     void OnDrawGizmos()
     {
+        // Do nothing if there are no nodes or if the nodes should not be displayed
         if (allNodes == null || partitionedNodes == null || !showNodes) return;
 
-        // Draw nodes
+        // Draw the nodes
         foreach (var node in allNodes.Values)
         {
             switch (node.NodeType)
@@ -71,18 +100,17 @@ public class GridMap : MonoBehaviour
 
     void OnValidate()
     {
+        // Do nothing if the node or cell size is too small
         if (nodeSize < minNodeSize || cellSize < minCellSize) return;
+
+        // Initialize the nodes
         InitializeNodes();
     }
 
-    public float NodeSize
-    { 
-        get { return nodeSize; } 
-        set { nodeSize = value; } 
-    }
-
-    public Dictionary<Vector3, Node> AllNodes { get { return allNodes; } }
-
+    /// <summary>
+    /// Retrieve all tilemaps within the scene
+    /// </summary>
+    /// <returns>A list of the tilemaps</returns>
     List<Tilemap> RetrieveTilemapsFromGrid()
     {
         List<Tilemap> tilemaps = new List<Tilemap>();
@@ -92,14 +120,20 @@ public class GridMap : MonoBehaviour
         return tilemaps;
     }
 
+    /// <summary>
+    /// Initialize the nodes in the map
+    /// </summary>
     void InitializeNodes()
     {
+        // Retrieve all the tilemaps in the scene
         List<Tilemap> tilemaps = RetrieveTilemapsFromGrid();
+        // Do nothing if there are no tilemaps
         if (tilemaps.Count == 0) return;
 
+        // Clear all existing nodes
         allNodes.Clear();
 
-        // Calculate grid bounds
+        // Calculate grid bounds oof the entire map
         minX = minY = int.MaxValue;
         maxX = maxY = int.MinValue;
         foreach (Tilemap tilemap in tilemaps)
@@ -111,6 +145,7 @@ public class GridMap : MonoBehaviour
             maxY = Mathf.Max(maxY, bounds.yMax);
         }
 
+        // Find the number of nodes there should be in the x and y axis
         int numNodesX = Mathf.RoundToInt((maxX - minX) / nodeSize);
         int numNodesY = Mathf.RoundToInt((maxY - minY) / nodeSize);
 
@@ -118,18 +153,22 @@ public class GridMap : MonoBehaviour
         {
             for (int y = 0; y <= numNodesY; ++y)
             {
+                // Get the position of the current node to be created
                 float posX = Mathf.Min(minX + x * nodeSize, maxX);
                 float posY = Mathf.Min(minY + y * nodeSize, maxY);
 
                 Vector3 nodePosition = new Vector3(posX, posY, 0);
+                // Get the type of the node
                 NodeType nodeType = GetNodeType(nodePosition);
 
+                // Create the node if it does not exist
                 if (!allNodes.ContainsKey(nodePosition))
                 {
                     Node node = new Node(nodePosition, nodeType);
                     allNodes.Add(nodePosition, node);
                     AddNodeToPartition(node);
                 }
+                // Change the node type if the node already exists and is of a different node type
                 else if (allNodes[nodePosition].NodeType < nodeType) allNodes[nodePosition].NodeType = nodeType;
             }
         }

@@ -17,13 +17,6 @@ public class Combat : MonoBehaviour
     // The time of the entity's previous attack
     [SerializeField] private float lastAtkTime;
 
-    // Initialize AudioManager
-    AudioManager audioManager;
-    private void Awake()
-    {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-    }
-
     #region Getters & Setters
     public int MaxHp
     {
@@ -63,19 +56,23 @@ public class Combat : MonoBehaviour
         currAtk = originalAtk;
     }
 
+    /// <summary>
+    /// Check if the entity is able to attack
+    /// </summary>
+    /// <param name="otherEntity">The entity to attack</param>
     public void TryAttack(Combat otherEntity)
     {
-        if (Time.time <= lastAtkTime + AtkCd) return;
+        if (Time.time <= lastAtkTime + AtkCd) return; // Check if the attack cooldown is over
         Attack(otherEntity);
-    }    
+    }
 
     /// <summary>
-    /// Attacks the target
+    /// Attacks the other entity
     /// </summary>
+    /// <param name="otherEntity">The entity to attack</param>
     public void Attack(Combat otherEntity)
     {
-        lastAtkTime = Time.time;
-        audioManager.PlaySFX(audioManager.enemyAttack);
+        lastAtkTime = Time.time; // Set the last attack time to the current time
         otherEntity.TakeDamage(currAtk);
     }
 
@@ -86,7 +83,7 @@ public class Combat : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currHp -= damage;
-        if (currHp <= 0) Die();
+        if (currHp <= 0) Die(); // The entity dies if it's hp goes to 0
     }
 
     /// <summary>
@@ -94,11 +91,13 @@ public class Combat : MonoBehaviour
     /// </summary>
     public void Die()
     {
+        // Execute game over if the entity is the player
         if (gameObject == GameplayManager.instance.Player.gameObject)
         {
             GameplayManager.instance.GameOver();
             return;
         }
+        // Handle enemy despawning
         GameplayManager.instance.enemyManager.DespawnEnemy(gameObject);
         Destroy(gameObject);
     }
