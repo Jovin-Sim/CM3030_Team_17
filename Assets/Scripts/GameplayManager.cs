@@ -7,6 +7,7 @@ public class GameplayManager : MonoBehaviour
     public static GameplayManager instance = null;
 
     public MenuManager menuManager = null;
+    public AudioManager audioManager = null;
     public GridMap gridMap = null;
     public ZoneProgression zoneProgression = null;
     public Pathfinding pathfinding = null;
@@ -34,6 +35,7 @@ public class GameplayManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         menuManager = gameObject.GetComponent<MenuManager>();
+        audioManager = gameObject.GetComponent<AudioManager>();
         gridMap = GetComponent<GridMap>();
         zoneProgression = GetComponent<ZoneProgression>();
         pathfinding = GetComponent<Pathfinding>();

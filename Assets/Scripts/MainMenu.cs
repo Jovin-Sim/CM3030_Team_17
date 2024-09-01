@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     // Initialize AudioManager
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        audioManager = GameplayManager.instance.audioManager;
     }
 
     public void StartGame()
