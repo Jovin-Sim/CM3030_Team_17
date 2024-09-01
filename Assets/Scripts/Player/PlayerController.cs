@@ -32,6 +32,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float bulletSpeed = 5f; // The speed of the bullet
     [SerializeField] bool bulletPierce = false; // A boolean for if the bullets can pierce through enemies
     #endregion
+    #region Audio Variables
+    [Header("Audio Variables")]
+    AudioManager audioManager;
+    #endregion
 
     public float CurrMoveSpeed { get { return currMoveSpeed; } set { currMoveSpeed = value; } }
     public Dictionary<float, float> SpeedEffects {  get { return speedEffects; } }
@@ -56,6 +60,8 @@ public class PlayerController : MonoBehaviour
         actions.Player.Fire.canceled += _ => StopFiring();
 
         currMoveSpeed = originalMoveSpeed;
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void FixedUpdate()
@@ -145,8 +151,9 @@ public class PlayerController : MonoBehaviour
         // Fire a bullet
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * bulletSpeed, ForceMode2D.Impulse);
-        if (bullet.TryGetComponent<Bullet>(out Bullet b))
-            b.Init(combat.CurrAtk, bulletPierce);
+        if (bullet.TryGetComponent<Bullet>(out Bullet b)) 
+            b.Init(combat.CurrAtk);
+            audioManager.PlaySFX(audioManager.gunshot);
     }
 
     public void GameOver()
