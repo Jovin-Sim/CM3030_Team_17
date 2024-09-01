@@ -37,7 +37,7 @@ public class GridMap : MonoBehaviour
     [SerializeField] Color obstacleNodeColor = Color.red;
 
     // The bounds of the entire map
-    int minX, minY, maxX, maxY;
+    float minX, minY, maxX, maxY;
 
     // The cost of straight and diagonal movement
     const int straightMovementCost = 10;
@@ -49,23 +49,14 @@ public class GridMap : MonoBehaviour
         get { return nodeSize; }
         set { nodeSize = value; }
     }
-
     public Dictionary<Vector3, Node> AllNodes { get { return allNodes; } }
+    public LayerMask ObstacleLayer { get { return obstacleLayer; } }
     #endregion
 
     void Awake()
     {
         // Retrieve the grid from the scene
         grid = FindObjectOfType<Grid>();
-    }
-
-    void Start()
-    {
-        // Do nothing if the node or cell size is too small or if the nodes have already been initialized
-        if (nodeSize < minNodeSize || cellSize < minCellSize || allNodes.Count > 0) return;
-
-        // Initialize the nodes
-        InitializeNodes();
     }
 
     void OnDrawGizmos()
@@ -86,7 +77,7 @@ public class GridMap : MonoBehaviour
                     break;
             }
 
-            Gizmos.DrawCube(node.Position, Vector3.one * 0.05f);
+            Gizmos.DrawCube(node.Position, Vector3.one * 0.1f);
         }
 
         Gizmos.color = new Color(0, 0, 1, cellOpacity);
@@ -96,15 +87,6 @@ public class GridMap : MonoBehaviour
             Vector3 size = new Vector3(cellSize, cellSize, 1);
             Gizmos.DrawWireCube(pos, size);
         }
-    }
-
-    void OnValidate()
-    {
-        // Do nothing if the node or cell size is too small
-        if (nodeSize < minNodeSize || cellSize < minCellSize) return;
-
-        // Initialize the nodes
-        InitializeNodes();
     }
 
     /// <summary>
@@ -125,15 +107,19 @@ public class GridMap : MonoBehaviour
     /// </summary>
     void InitializeNodes()
     {
+        // Do nothing if the node or cell size is too small
+        if (nodeSize < minNodeSize || cellSize < minCellSize) return;
+
+        // Clear all existing nodes
+        partitionedNodes.Clear();
+        allNodes.Clear();
+
         // Retrieve all the tilemaps in the scene
         List<Tilemap> tilemaps = RetrieveTilemapsFromGrid();
         // Do nothing if there are no tilemaps
         if (tilemaps.Count == 0) return;
 
-        // Clear all existing nodes
-        allNodes.Clear();
-
-        // Calculate grid bounds oof the entire map
+        // Calculate grid bounds of the entire map
         minX = minY = int.MaxValue;
         maxX = maxY = int.MinValue;
         foreach (Tilemap tilemap in tilemaps)
@@ -152,6 +138,53 @@ public class GridMap : MonoBehaviour
         for (int x = 0; x <= numNodesX; ++x)
         {
             for (int y = 0; y <= numNodesY; ++y)
+            {
+                // Get the position of the current node to be created
+                float posX = Mathf.Min(minX + x * nodeSize, maxX);
+                float posY = Mathf.Min(minY + y * nodeSize, maxY);
+
+                Vector3 nodePosition = new Vector3(posX, posY, 0);
+                // Get the type of the node
+                NodeType nodeType = GetNodeType(nodePosition);
+
+                // Create the node if it does not exist
+                if (!allNodes.ContainsKey(nodePosition))
+                {
+                    Node node = new Node(nodePosition, nodeType);
+                    allNodes.Add(nodePosition, node);
+                    AddNodeToPartition(node);
+                }
+                // Change the node type if the node already exists and is of a different node type
+                else if (allNodes[nodePosition].NodeType < nodeType) allNodes[nodePosition].NodeType = nodeType;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Initialize the nodes in the map
+    /// </summary>
+    public void InitializeNodes(Vector2 minBounds, Vector2 maxBounds)
+    {
+        // Do nothing if the node or cell size is too small
+        if (nodeSize < minNodeSize || cellSize < minCellSize) return;
+
+        // Clear all existing nodes
+        partitionedNodes.Clear();
+        allNodes.Clear();
+
+        // Get bounds
+        minX = minBounds.x;
+        minY = minBounds.y;
+        maxX = maxBounds.x;
+        maxY = maxBounds.y;
+
+        // Find the number of nodes there should be in the x and y axis
+        int numNodesX = Mathf.RoundToInt((maxBounds.x - minBounds.x) / nodeSize);
+        int numNodesY = Mathf.RoundToInt((maxBounds.y - minBounds.y) / nodeSize);
+
+        for (int x = 1; x < numNodesX; ++x)
+        {
+            for (int y = 1; y < numNodesY; ++y)
             {
                 // Get the position of the current node to be created
                 float posX = Mathf.Min(minX + x * nodeSize, maxX);
@@ -233,7 +266,7 @@ public class GridMap : MonoBehaviour
         return emptyPos[randomIndex];
     }
 
-    public Node GetClosestNode(Vector3 pos)
+    public Node GetClosestNode(Vector3 pos, bool checkObstruction)
     {
         Node node = null;
         float minDist = float.MaxValue;
@@ -244,6 +277,7 @@ public class GridMap : MonoBehaviour
 
             if (dist < minDist)
             {
+                if (checkObstruction && otherNode.NodeType == NodeType.OBSTACLE) continue;
                 node = otherNode;
                 minDist = dist;
             }
@@ -290,6 +324,12 @@ public class GridMap : MonoBehaviour
         float yDist = Mathf.Abs(nodeA.Position.y - nodeB.Position.y);
         float dist = diagonalMovementCost * Mathf.Min(xDist, yDist) + straightMovementCost * Mathf.Abs(xDist - yDist);
         return dist;
+    }
+
+    public bool IsPathClear(Vector2 posA, Vector2 posB)
+    {
+        if (Physics2D.Linecast(posA, posB, obstacleLayer)) return true;
+        return false;
     }
 
     void OnDestroy()

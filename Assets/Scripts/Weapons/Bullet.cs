@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     // The effect that is created on bullet's destruction
     [SerializeField] GameObject hitEffect;
     // The damage the bulllet deals
-    [SerializeField] int damage;
+    [SerializeField] float damage;
     // The lifespan of the bullet before it is automatically destroyed
     [SerializeField] float lifespan = 5;
     // A check for if the bullet can pierce through objects or enemies
@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
     /// </summary>
     /// <param name="damage">The bullet's damage</param>
     /// <param name="pierce">Whether the bullet can pierce through objects or enemies</param>
-    public void Init(int damage, bool pierce = false)
+    public void Init(float damage, bool pierce = false)
     {
         this.damage = damage;
         this.pierce = pierce;
@@ -49,7 +49,7 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
    {
         // Check if the other entity has the combat class and damage it if it does
-        if (collision.TryGetComponent<Combat>(out Combat entity)) entity.TakeDamage(damage);
+        if (collision.TryGetComponent<Combat>(out Combat entity)) entity.ChangeHP(damage);
         if (pierce) return;
 
         // Create the hit effect before destroying the bullet

@@ -49,8 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12ea0bc89dd01b4696446d82e67ecf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combat: {fileID: 0}
-  movement: {fileID: 0}
+  spawnChance: 0
   target: {fileID: 0}
 --- !u!114 &-3623205734568843165
 MonoBehaviour:
@@ -64,12 +63,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e432582f1f7411439048eb53aa6d5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 5
+  maxHp: 20
   currHp: 0
-  originalAtk: 1
+  originalAtk: 3
   currAtk: 0
   atkCd: 1
   lastAtkTime: 0
+  atkRange: 0
 --- !u!114 &8897858710531945167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,9 +83,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currAccel: 0
-  originalAccel: 1
-  rotationSpeed: 180
-  tolerance: 0
+  originalAccel: 2
+  stoppingRange: 0
+  tolerance: 0.3
   target: {fileID: 0}
 --- !u!212 &1042871284126403436
 SpriteRenderer:

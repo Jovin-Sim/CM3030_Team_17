@@ -16,16 +16,30 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Variables")]
     [SerializeField] float currMoveSpeed; // The move speed the player currently has
     [SerializeField] float originalMoveSpeed = 0f; // The move speed the player starts with, free of any other effects
-    [SerializeField] bool canMove = true; // Boolean to toggle player controllability
+    [SerializeField] Dictionary<float, float> speedEffects = new Dictionary<float, float>();
+
+    Vector2 minBounds, maxBounds;
     #endregion
 
     #region Combat Variables
     [Header("Combat Variables")]
     Combat combat;
     Transform firePoint; // The point the player's bullets come out from
+    Coroutine firingCoroutine;
+    [SerializeField] float fireRate = 0.3f;
+    [SerializeField] bool rapidFire = false;
     [SerializeField] GameObject bulletPrefab; // The prefab of the bullet
     [SerializeField] float bulletSpeed = 5f; // The speed of the bullet
+    [SerializeField] bool bulletPierce = false; // A boolean for if the bullets can pierce through enemies
     #endregion
+
+    public float CurrMoveSpeed { get { return currMoveSpeed; } set { currMoveSpeed = value; } }
+    public Dictionary<float, float> SpeedEffects {  get { return speedEffects; } }
+    public Vector2 MinBounds { get { return minBounds; } set { minBounds = value; } }
+    public Vector2 MaxBounds { get {return maxBounds; } set { maxBounds = value; } }
+    public Combat Combat { get { return combat; } }
+    public float FireRate { get { return fireRate; } set { fireRate = value; } }
+    public bool BulletPierce { get { return bulletPierce; } set { bulletPierce = value; } }
 
     private void Awake()
     {
@@ -38,18 +52,29 @@ public class PlayerController : MonoBehaviour
         actions = new PlayerAC();
         actions.Player.Enable();
         // Add the logic of firing to the "Fire" input
-        actions.Player.Fire.performed += Fire;
+        actions.Player.Fire.started += _ => StartFiring();
+        actions.Player.Fire.canceled += _ => StopFiring();
 
         currMoveSpeed = originalMoveSpeed;
     }
 
     private void FixedUpdate()
     {
-        if (!canMove) return;
-
         // Handle the player's movement and look
         Movement(actions.Player.Move);
         Look(actions.Player.Look);
+    }
+
+    public void TogglePlayerControllability(bool canControl)
+    {
+        if (canControl) actions.Player.Enable();
+        else actions.Player.Disable();
+    }
+
+    public void ToggleUIControllability(bool canControl)
+    {
+        if (canControl) actions.UI.Enable();
+        else actions.UI.Disable();
     }
 
     /// <summary>
@@ -82,18 +107,37 @@ public class PlayerController : MonoBehaviour
         rb2d.rotation = angle;
     }
 
-    /// <summary>
-    /// Handle the player's fire input
-    /// </summary>
-    /// <param name="context"></param>
-    void Fire(InputAction.CallbackContext context)
+    void StartFiring()
     {
-        // Do nothing if no inputs were made
-        if (!context.performed) return;
+        firingCoroutine = StartCoroutine(Firing());
+    }
 
+    void StopFiring()
+    {
+        if (firingCoroutine == null) return;
+        StopCoroutine(firingCoroutine);
+        firingCoroutine = null;
+    }
+
+    IEnumerator Firing()
+    {
+        FireOnce();
+        if (!rapidFire) yield return null;
+        while (true)
+        {
+            yield return new WaitForSeconds(fireRate);
+            FireOnce();
+        }
+    }
+
+    /// <summary>
+    /// Fire a single bullet
+    /// </summary>
+    void FireOnce()
+    {
         // Log an error if the bullet prefab is missing
         if (bulletPrefab == null)
-        { 
+        {
             Debug.LogError("Bullet Prefab not found!");
             return;
         }
@@ -101,8 +145,8 @@ public class PlayerController : MonoBehaviour
         // Fire a bullet
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * bulletSpeed, ForceMode2D.Impulse);
-        if (bullet.TryGetComponent<Bullet>(out Bullet b)) 
-            b.Init(combat.CurrAtk);
+        if (bullet.TryGetComponent<Bullet>(out Bullet b))
+            b.Init(combat.CurrAtk, bulletPierce);
     }
 
     public void GameOver()

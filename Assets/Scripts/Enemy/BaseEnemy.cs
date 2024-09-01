@@ -10,20 +10,22 @@ public class BaseEnemy : MonoBehaviour
     // Composition classes  
     Combat combat;
     PathBasedMovement movement;
+    [SerializeField] int spawnChance;
     // The target the entity is chasing
     [SerializeField] Collider2D target = null;
 
     #region Getters & Setters
     public Combat Combat { get { return combat; } }
     public PathBasedMovement Movement { get { return movement; } }
-    public Collider2D Target 
-    { 
-        get { return target; } 
-        set { 
+    public Collider2D Target
+    {
+        get { return target; }
+        set {
             target = value;
             if (movement != null) movement.Target = value; // Set movement's target too
-        } 
+        }
     }
+    public int SpawnChance { get { return spawnChance; } set { spawnChance = value; } }
     #endregion
 
     private void Awake()
@@ -48,7 +50,7 @@ public class BaseEnemy : MonoBehaviour
     {
         // Collisions between enemies are disabled,
         // therefore any collisions will be between 2 different types of entities
-        if (collision.collider == null) return;
-        if (collision.transform.TryGetComponent<Combat>(out Combat otherEntity)) combat.TryAttack(otherEntity);
+        if (collision.collider == null || !combat.TryAttack()) return;
+        if (collision.transform.TryGetComponent<Combat>(out Combat otherEntity)) combat.Attack(otherEntity);
     }
 }

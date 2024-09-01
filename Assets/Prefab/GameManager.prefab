@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2751082348333265013}
   - component: {fileID: 2751082348333265009}
+  - component: {fileID: 473897746592460811}
   - component: {fileID: 2751082348333265011}
   - component: {fileID: 8117938156618623920}
   - component: {fileID: 5985122980790473745}
+  - component: {fileID: 1925235391804206206}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,9 +48,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f9a35ea23f7034ca9f1a1a16e48439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridMap: {fileID: 0}
+  menuManager: {fileID: 473897746592460811}
+  gridMap: {fileID: 5985122980790473745}
+  zoneProgression: {fileID: 1925235391804206206}
   pathfinding: {fileID: 2751082348333265011}
-  enemyManager: {fileID: 0}
+  enemyManager: {fileID: 8117938156618623920}
+--- !u!114 &473897746592460811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2751082348333265012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f50467f1c854e64fbf49fba1ed3fc8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2751082348333265011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,14 +89,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060486fd1cf304346bd87e7d38da5dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyNames:
-  - Zombie
-  enemyPrefabs:
-  - {fileID: 4353770627799583166, guid: 43a8e0f1ecdac0f40a96400f557aceb8, type: 3}
   enemies: []
-  maxEnemyCount: 10
-  maxSpawnAmount: 3
+  maxEnemyCount: 3
+  maxSpawnAmount: 1
   spawnIInterval: 3
+  totalSpawnChance: 0
 --- !u!114 &5985122980790473745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,3 +116,24 @@ MonoBehaviour:
     m_Bits: 2048
   floorNodeColor: {r: 0, g: 1, b: 0, a: 1}
   obstacleNodeColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &1925235391804206206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2751082348333265012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e5283f265ef214b8932e9d162bc8a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  scoresToNextZone: 
+  currentZone: 0
+  zones: []
+  zoneDetails: []
+  zoneColliders: []
+  nextZoneIndicators: []
+  minBounds: {x: 0, y: 0}
+  maxBounds: {x: 0, y: 0}

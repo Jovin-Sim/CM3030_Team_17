@@ -6,11 +6,15 @@ public class GameplayManager : MonoBehaviour
 {
     public static GameplayManager instance = null;
 
+    public MenuManager menuManager = null;
     public GridMap gridMap = null;
+    public ZoneProgression zoneProgression = null;
     public Pathfinding pathfinding = null;
     public EnemyManager enemyManager = null;
 
     PlayerController player = null;
+
+    public PlayerController Player { get { return player; } }
 
     private void Awake()
     {
@@ -29,14 +33,20 @@ public class GameplayManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
+        menuManager = gameObject.GetComponent<MenuManager>();
         gridMap = GetComponent<GridMap>();
+        zoneProgression = GetComponent<ZoneProgression>();
         pathfinding = GetComponent<Pathfinding>();
         enemyManager = GetComponent<EnemyManager>();
 
         player = FindObjectOfType<PlayerController>();
+        zoneProgression.SetPlayerTransform(player.transform);
     }
 
-    public PlayerController Player { get { return player; } }
+    void Start()
+    {
+        zoneProgression.UpdateZone();
+    }
 
     public void GameOver()
     {
