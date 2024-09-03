@@ -90,6 +90,15 @@ public class PlayerController : MonoBehaviour
             audioManager.PlaySFX(audioManager.gunshot);
     }
 
+    public void Upgrade(string upgradeType, float multiplier)
+    {
+        if(upgradeType == "Bullets")
+        {
+            bulletSpeed *= multiplier;
+        }
+
+    }
+
     public void GameOver()
     {
         Destroy(gameObject);
