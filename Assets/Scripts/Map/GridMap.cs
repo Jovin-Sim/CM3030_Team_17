@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -37,7 +38,7 @@ public class GridMap : MonoBehaviour
     [SerializeField] Color obstacleNodeColor = Color.red;
 
     // The bounds of the entire map
-    float minX, minY, maxX, maxY;
+    public float minX, minY, maxX, maxY;
 
     // The cost of straight and diagonal movement
     const int straightMovementCost = 10;
@@ -238,29 +239,24 @@ public class GridMap : MonoBehaviour
     {
         List<Vector3> emptyPos = new List<Vector3>();
         Vector3Int playerCellPos = GetPartitionCell(GameplayManager.instance.Player.transform.position);
-        int range = Mathf.CeilToInt(10 / cellSize);
+        int maxRange = Mathf.CeilToInt(7 / cellSize);
+        int minRange = Mathf.CeilToInt(2 / cellSize);
 
-        for (int x = playerCellPos.x - range; x <= playerCellPos.x + range; x += cellSize)
+        foreach (KeyValuePair<Vector3Int, Dictionary<Vector3, Node>> cell in partitionedNodes)
         {
-            if (x < minX || x > maxX) continue;
-            for (int y = playerCellPos.x - range; y <= playerCellPos.x + range; y += cellSize)
+            float dist = Vector3Int.Distance(playerCellPos, cell.Key);
+            if (minRange > dist && dist > maxRange) continue;
+
+            foreach (KeyValuePair<Vector3, Node> node in cell.Value)
             {
-                if (y < minY || y > maxY) continue;
-
-                Vector3Int cellPos = new Vector3Int(x, y, 0);
-
-                if (!partitionedNodes.ContainsKey(cellPos)) continue;
-
-                foreach (Vector3 pos in partitionedNodes[cellPos].Keys)
+                if (node.Value.NodeType == NodeType.FLOOR)
                 {
-                    if (GetNodeType(pos, size) == NodeType.FLOOR &&
-                        Vector3.Distance(GameplayManager.instance.Player.transform.position, pos) <= 10)
-                        emptyPos.Add(pos);
+                    emptyPos.Add(node.Key);
+                    break;
                 }
             }
         }
-
-        if (emptyPos.Count == 0) return Vector3.zero;
+        if (emptyPos.Count == 0) Debug.LogError("No empty positions could be found!");
 
         int randomIndex = Random.Range(0, emptyPos.Count);
         return emptyPos[randomIndex];

@@ -4,26 +4,24 @@ using UnityEngine;
 
 public class Combat : MonoBehaviour
 {
+    [SerializeField] HealthBar healthBar;
+
     // The max and current hp of the entity
     [SerializeField] float originalHp = 1;
     [SerializeField] float maxHp;
     [SerializeField] float currHp;
-    [SerializeField] Dictionary<float, float> hpEffects = new Dictionary<float, float>();
 
     // The original and current attack of the entity
     [SerializeField] float originalAtk = 1;
     [SerializeField] float currAtk;
-    [SerializeField] Dictionary<float, float> atkEffects = new Dictionary<float, float>();
 
     // The cooldown of the entity
     [SerializeField] float atkCd = 1;
     // The time of the entity's previous attack
     [SerializeField] float lastAtkTime;
-    [SerializeField] Dictionary<float, float> atkCdEffects = new Dictionary<float, float>();
 
     // The distance the entity is from its target before it starts attacking the player
     [SerializeField] float atkRange = 0f;
-    [SerializeField] Dictionary<float, float> atkRangeEffects = new Dictionary<float, float>();
 
     #region Getters & Setters
     public float OriginalHp
@@ -41,7 +39,6 @@ public class Combat : MonoBehaviour
         get { return currHp; }
         set { currHp = value; }
     }
-    public Dictionary<float, float> HpEffects { get { return hpEffects; } }
     public float OriginalAtk
     {
         get { return originalAtk; }
@@ -52,13 +49,11 @@ public class Combat : MonoBehaviour
         get { return currAtk; }
         set { currAtk = value; }
     }
-    public Dictionary<float, float> AtkEffects { get { return atkEffects; } }
     public float AtkCd
     {
         get { return atkCd; }
         set { atkCd = value; }
     }
-    public Dictionary<float, float> AtkCdEffects { get { return atkCdEffects; } }
     public float LastAtkTime
     {
         get { return lastAtkTime; }
@@ -69,13 +64,19 @@ public class Combat : MonoBehaviour
         get { return atkRange; }
         set { atkRange = value; }
     }
-    public Dictionary<float, float> AtkRangeEffects { get { return atkRangeEffects; } }
     #endregion
 
     void Awake()
     {
         currHp = originalHp;
+        maxHp = originalHp;
         currAtk = originalAtk;
+        if (healthBar == null) healthBar = GetComponentInChildren<HealthBar>();
+        if (healthBar != null)
+        {
+            healthBar.SetMaxHealth(maxHp);
+            healthBar.SetHealth(currHp);
+        }
     }
 
     /// <summary>
@@ -108,6 +109,7 @@ public class Combat : MonoBehaviour
         currHp -= amount;
         if (currHp > maxHp) currHp = maxHp;
         else if (currHp <= 0) Die(); // The entity dies if it's hp goes to 0
+        if (healthBar != null) healthBar.SetHealth(currHp);
     }
 
     /// <summary>
@@ -119,6 +121,7 @@ public class Combat : MonoBehaviour
         maxHp -= amount;
         if (currHp > maxHp) currHp = maxHp;
         else if (currHp < maxHp) ChangeHP(amount);
+        if (healthBar != null) healthBar.SetMaxHealth(maxHp);
     }
 
     /// <summary>

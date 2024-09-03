@@ -158,9 +158,9 @@ public class PathBasedMovement : MonoBehaviour
         // Find the direction of the current waypoint
         Vector2 direction = (targetPosition - transform.position).normalized;
 
+        // Flip the entity to the direction of their target position
         if (direction.x > 0) transform.localRotation = Quaternion.Euler(transform.localRotation.x, 0, transform.localRotation.z);
         else transform.localRotation = Quaternion.Euler(transform.localRotation.x, 180, transform.localRotation.z);
-
     }
 
     /// <summary>
@@ -175,9 +175,9 @@ public class PathBasedMovement : MonoBehaviour
         // Move the entity towards it
         rb2d.velocity = Vector2.Lerp(rb2d.velocity, direction, Time.deltaTime * currAccel);
 
+        // Flip the entity to the direction of their target position
         if (direction.x > 0) transform.localRotation = Quaternion.Euler(transform.localRotation.x, 0, transform.localRotation.z);
         else transform.localRotation = Quaternion.Euler(transform.localRotation.x, 180, transform.localRotation.z);
-
     }
 
     void OnDrawGizmos()

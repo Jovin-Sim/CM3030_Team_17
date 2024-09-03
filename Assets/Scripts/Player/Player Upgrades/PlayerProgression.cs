@@ -27,6 +27,9 @@ public class PlayerProgression : MonoBehaviour
 
         GameplayManager.instance.menuManager.ToggleMenu(gameObject, true);
 
+        CanvasGroup canvasGroup = gameObject.GetComponent<CanvasGroup>();
+        if (canvasGroup != null) canvasGroup.alpha = 1f;
+
         List<BasePowerup> tempEffects = new List<BasePowerup>(effects);
         cardEffects.Clear();
 

@@ -10,11 +10,8 @@ public class FireRatePowerup : BasePowerup
 
     protected override void ApplyEffect(PlayerController player)
     {
-        if (player.TryGetComponent<Combat>(out Combat combat))
-        {
-            float amount = player.FireRate * percentage / 100f;
-            player.FireRate += amount;
-        }
+        float amount = player.FireRate * percentage / 100f;
+        player.FireRate += amount;
     }
 
     protected override void RemoveEffect(PlayerController player)

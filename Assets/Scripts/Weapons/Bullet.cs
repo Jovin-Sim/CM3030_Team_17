@@ -6,55 +6,54 @@ public class Bullet : MonoBehaviour
 {
     // The effect that is created on bullet's destruction
     [SerializeField] GameObject hitEffect;
-    // The damage the bulllet deals
+    [SerializeField] Explosion explosionEffect;
+    // The damage the bullet deals
     [SerializeField] float damage;
     // The lifespan of the bullet before it is automatically destroyed
-    [SerializeField] float lifespan = 5;
+    [SerializeField] float lifespan = 1f;
     // A check for if the bullet can pierce through objects or enemies
     [SerializeField] bool pierce;
+    // A check for if the bullet explodes upon impact
+    [SerializeField] bool explodeOnImpact;
 
     /// <summary>
     /// An initialization function that is called when the bullet is first created
     /// </summary>
     /// <param name="damage">The bullet's damage</param>
     /// <param name="pierce">Whether the bullet can pierce through objects or enemies</param>
-    public void Init(float damage, bool pierce = false)
+    public void Init(float damage, bool pierce = false, bool explodeOnImpact = false)
     {
         this.damage = damage;
         this.pierce = pierce;
+        this.explodeOnImpact = explodeOnImpact;
     }
     
     void Start()
     {
-        // Start the coroutine counting down to the bullet's death
-        StartCoroutine(Alive());
-    }
-
-    /// <summary>
-    /// A coroutine that counts down to the bullet's death
-    /// </summary>
-    IEnumerator Alive()
-    {
-        // Set the start time
-        float startTime = Time.time;
-        // Yield null while the bullet has not exceeded its lifespan
-        while (Time.time < startTime + lifespan)
-        {
-            yield return null;
-        }
-        // Destroy the bullet once its lifespan is gone
-        Destroy(gameObject);
+        // Destroy the object after its lifespan has been reached
+        Destroy(gameObject, lifespan);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
    {
+        // Check if the collision object is water and ignore it if it is
+        if (collision.GetComponent<WaterLogic>() != null) return;
+
         // Check if the other entity has the combat class and damage it if it does
         if (collision.TryGetComponent<Combat>(out Combat entity)) entity.ChangeHP(damage);
-        if (pierce) return;
 
-        // Create the hit effect before destroying the bullet
+        // Create the hit effect
         GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(effect, 0.25f);
-        Destroy(gameObject);
+
+        // Destroy the bullet if pierce is not active
+        if (!pierce) Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        if (!explodeOnImpact) return;
+
+        explosionEffect.Explode(gameObject);
     }
 }

@@ -47,7 +47,7 @@ public class RangedEnemy : BaseEnemy
         }
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        rangedParticles.transform.rotation = Quaternion.Euler(new Vector3(angle, 90f, 0));
+        rangedParticles.transform.rotation = Quaternion.Euler(new Vector3(-angle, 90f, 0));
         // Fire a bullet
         rangedParticles.Play(); 
     }

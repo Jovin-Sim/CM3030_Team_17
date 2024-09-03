@@ -18,7 +18,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] float spawnIInterval;
     [SerializeField] int totalSpawnChance;
 
-    [SerializeField] Coroutine spawnEnemyCoroutine;
+    Coroutine spawnEnemyCoroutine;
     
     public Dictionary<int, GameObject> EnemyTypes {  get { return enemyTypes; } }
     public int EnemyCount { get { return enemies.Count; } }
