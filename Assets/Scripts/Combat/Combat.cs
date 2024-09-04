@@ -132,7 +132,7 @@ public class Combat : MonoBehaviour
         // Execute game over if the entity is the player
         if (gameObject == GameplayManager.instance.Player.gameObject)
         {
-            GameplayManager.instance.GameOver();
+            GameplayManager.instance.EndGame(false);
             return;
         }
         // Handle enemy despawning

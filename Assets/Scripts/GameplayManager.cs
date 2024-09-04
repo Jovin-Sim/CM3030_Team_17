@@ -46,9 +46,8 @@ public class GameplayManager : MonoBehaviour
         zoneProgression.UpdateZone();
     }
 
-    public void GameOver()
+    public void EndGame(bool win)
     {
-        if (player == null) return;
-        player.GameOver();
+        menuManager.EndGame(win);
     }    
 }

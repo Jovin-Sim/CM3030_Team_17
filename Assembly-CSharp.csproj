@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Character.cs" />
+    <Compile Include="Assets\EndGameMenu.cs" />
     <Compile Include="Assets\Explosives.cs" />
     <Compile Include="Assets\HealthBar.cs" />
     <Compile Include="Assets\PlayerHealth.cs" />

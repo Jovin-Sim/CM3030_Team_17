@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
     bool isMenuOpen = false;
 
     [SerializeField] GameObject pauseMenuUI;
+    [SerializeField] EndGameMenu endGameMenuUI;
 
     public bool IsMenuOpen { get { return isMenuOpen; } }
 
@@ -44,5 +45,11 @@ public class MenuManager : MonoBehaviour
     public void HandlePause()
     {
         ToggleMenu(pauseMenuUI, !isMenuOpen);
+    }
+
+    public void EndGame(bool win)
+    {
+        ToggleMenu(endGameMenuUI.transform.parent.gameObject, true);
+        endGameMenuUI.EndGame(win);
     }
 }

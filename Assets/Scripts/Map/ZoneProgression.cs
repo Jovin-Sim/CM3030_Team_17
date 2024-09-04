@@ -121,7 +121,7 @@ public class ZoneProgression : MonoBehaviour
         ++currentZone;
         if (zones.Count <= currentZone)
         {
-            Debug.LogWarning("No next zone was found.");
+            GameplayManager.instance.EndGame(true);
             return;
         }
         Vector3 zone = zones[currentZone];
