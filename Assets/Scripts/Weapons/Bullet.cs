@@ -54,6 +54,6 @@ public class Bullet : MonoBehaviour
     {
         if (!explodeOnImpact) return;
 
-        explosionEffect.Explode(gameObject);
+        explosionEffect.Explode(transform.position);
     }
 }

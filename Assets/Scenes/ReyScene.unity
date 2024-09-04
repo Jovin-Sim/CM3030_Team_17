@@ -2049,7 +2049,7 @@ MonoBehaviour:
   - {fileID: 2896475373766084987, guid: 9f7165f3692aacb4e87f46c4c2e7ce21, type: 3}
   - {fileID: 4410518327987768689, guid: 3a1b2c3310d16f846b1b73cc6902a9f9, type: 3}
   - {fileID: 1076470989566509444, guid: 679ed88cc492dc048add2b08e1b60c08, type: 3}
-  maxEnemyCount: 40
+  maxEnemyCount: 1
   maxSpawnAmount: 4
   spawnIInterval: 2
 --- !u!4 &427903941
@@ -20743,6 +20743,7 @@ GameObject:
   - component: {fileID: 1459215768}
   - component: {fileID: 1459215769}
   - component: {fileID: 1459215770}
+  - component: {fileID: 1459215771}
   m_Layer: 5
   m_Name: Zone 3 Indicator
   m_TagString: Untagged
@@ -20757,17 +20758,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1459215767}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 917121710}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 71, y: 57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1459215769
 CanvasRenderer:
@@ -20796,7 +20797,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 81dc234d1712d5f4382146906ab04eeb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dae9e565e204c5d438536f4c8d6c7422, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20806,6 +20807,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &1459215771
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459215767}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d177c485112881341bc755a146fadc36, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1475151871
 GameObject:
   m_ObjectHideFlags: 0
@@ -28543,7 +28563,7 @@ MonoBehaviour:
   - {fileID: 2896475373766084987, guid: 9f7165f3692aacb4e87f46c4c2e7ce21, type: 3}
   - {fileID: 4410518327987768689, guid: 3a1b2c3310d16f846b1b73cc6902a9f9, type: 3}
   - {fileID: 1076470989566509444, guid: 679ed88cc492dc048add2b08e1b60c08, type: 3}
-  maxEnemyCount: 50
+  maxEnemyCount: 1
   maxSpawnAmount: 5
   spawnIInterval: 1
 --- !u!4 &1540699821
@@ -28571,6 +28591,7 @@ GameObject:
   - component: {fileID: 1660526733}
   - component: {fileID: 1660526732}
   - component: {fileID: 1660526731}
+  - component: {fileID: 1660526734}
   m_Layer: 5
   m_Name: Zone 4 Indicator
   m_TagString: Untagged
@@ -28597,7 +28618,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 81dc234d1712d5f4382146906ab04eeb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dae9e565e204c5d438536f4c8d6c7422, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -28622,18 +28643,37 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660526730}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 917121710}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 50, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 71, y: 57}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1660526734
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660526730}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d177c485112881341bc755a146fadc36, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1670604914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28757,7 +28797,7 @@ MonoBehaviour:
   - {fileID: 4353770627799583166, guid: 43a8e0f1ecdac0f40a96400f557aceb8, type: 3}
   - {fileID: 2896475373766084987, guid: 9f7165f3692aacb4e87f46c4c2e7ce21, type: 3}
   - {fileID: 4410518327987768689, guid: 3a1b2c3310d16f846b1b73cc6902a9f9, type: 3}
-  maxEnemyCount: 30
+  maxEnemyCount: 1
   maxSpawnAmount: 4
   spawnIInterval: 2
 --- !u!4 &1675077839
@@ -28834,6 +28874,7 @@ GameObject:
   - component: {fileID: 1757929388}
   - component: {fileID: 1757929387}
   - component: {fileID: 1757929386}
+  - component: {fileID: 1757929389}
   m_Layer: 5
   m_Name: Zone 2 Indicator
   m_TagString: Untagged
@@ -28860,7 +28901,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 81dc234d1712d5f4382146906ab04eeb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dae9e565e204c5d438536f4c8d6c7422, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -28885,18 +28926,37 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757929385}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 917121710}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -50, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 71, y: 57}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1757929389
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757929385}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d177c485112881341bc755a146fadc36, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1813123859
 GameObject:
   m_ObjectHideFlags: 0
@@ -33624,7 +33684,7 @@ PrefabInstance:
     - target: {fileID: 1925235391804206206, guid: 7c4bc5a36f9f0bc42bbaff03a0d9aaf1,
         type: 3}
       propertyPath: scoresToNextZone.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1925235391804206206, guid: 7c4bc5a36f9f0bc42bbaff03a0d9aaf1,
         type: 3}
@@ -33665,6 +33725,11 @@ PrefabInstance:
         type: 3}
       propertyPath: scoresToNextZone.Array.data[2]
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925235391804206206, guid: 7c4bc5a36f9f0bc42bbaff03a0d9aaf1,
+        type: 3}
+      propertyPath: scoresToNextZone.Array.data[3]
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1925235391804206206, guid: 7c4bc5a36f9f0bc42bbaff03a0d9aaf1,
         type: 3}

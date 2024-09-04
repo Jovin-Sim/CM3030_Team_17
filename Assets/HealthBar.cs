@@ -13,7 +13,6 @@ public class HealthBar : MonoBehaviour
     public void SetMaxHealth(float health)
     {
         slider.maxValue = health;
-        slider.value = health;
         UpdateValueText(health);
 
         fill.color = gradient.Evaluate(1f);
@@ -32,7 +31,6 @@ public class HealthBar : MonoBehaviour
     {
         slider.value = health;
         UpdateValueText(health);
-
 
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }

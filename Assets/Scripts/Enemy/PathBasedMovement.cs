@@ -27,24 +27,32 @@ public class PathBasedMovement : MonoBehaviour
     Node targetNode;
     // Last position the target was in
     Vector3 prevTargetPos;
+    // The obstacle layer
     LayerMask obstacleLayer;
 
+    #region Getters & Setters
     public Vector3[] Path { get { return path; } }
     public int TargetIndex { get { return targetIndex; } }
     public float CurrAccel { get { return currAccel; } set { currAccel = value; } }
     public float Tolerance { get { return tolerance; } }
     public Collider2D Target { get { return target; } set {  target = value; } }
+    #endregion
 
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
         // Set the entity's tolerance in collision checks to be equal to its radius
         tolerance = GetComponent<CircleCollider2D>().radius * transform.localScale.x;
+        // Set its stopping range to its circumference if it is 0
         if (stoppingRange == 0f) stoppingRange = tolerance * 2;
 
+        //Randomize the speed of the entity
         originalAccel *= Random.Range(0.5f, 1.5f);
         originalAccel = Mathf.Round(originalAccel * 100f) / 100f;
+        // Set the speed of the entity
         currAccel = originalAccel;
+
+        // Set the obstacle layer
         obstacleLayer = GameplayManager.instance.gridMap.ObstacleLayer;
     }
 
@@ -59,6 +67,10 @@ public class PathBasedMovement : MonoBehaviour
         prevTargetPos = target.transform.position;
     }
     
+    /// <summary>
+    /// Check if the path needs to be updated
+    /// </summary>
+    /// <returns>A bool to indicate whether an update is required</returns>
     bool IsPathUpdateRequired()
     {
         // Update the path if there is a target but no path to it
@@ -78,11 +90,11 @@ public class PathBasedMovement : MonoBehaviour
     }
 
     /// <summary>
-    /// Updates the path via the Pathfinding class's pathfinding function
+    /// Updates the path via pathfinding
     /// </summary>
     void UpdatePath()
     {
-        // Do nothing if no such class was found or if there is no target
+        // Do nothing if no pathfinding class was found or if there is no target
         if (GameplayManager.instance == null || GameplayManager.instance.pathfinding == null || target == null) return;
 
         // Compute the path
@@ -109,23 +121,30 @@ public class PathBasedMovement : MonoBehaviour
             targetIndex >= path.Length)
         {
             rb2d.velocity = Vector2.zero;
+            // Rotate the entity to face its target
             RotateTowards(target.transform.position);
             return;
         }
 
+        // Get the distance between the entity and its target
         float targetDistance = Vector2.Distance(transform.position, Target.transform.position);
+
+        // Check if it is near enough to the target
         if (targetDistance <= stoppingRange)
         {
+            // Get the direction of the target
             Vector2 targetDirection = (Target.transform.position - transform.position).normalized;
+
+            // Check if the entity can see the target
             RaycastHit2D hit = Physics2D.Raycast(transform.position, targetDirection, targetDistance, obstacleLayer);
             if (hit.collider == null)
             {
                 rb2d.velocity = Vector2.zero;
+                // Rotate the entity to face its target
                 RotateTowards(target.transform.position);
                 return;
             }
         }
-
 
         // Get the position of the current waypoint
         Vector3 currentWaypoint = path[targetIndex];
@@ -159,6 +178,7 @@ public class PathBasedMovement : MonoBehaviour
         Vector2 direction = (targetPosition - transform.position).normalized;
 
         // Flip the entity to the direction of their target position
+        // Also ensure that the health bar is not inverted
         if (direction.x > 0)
         {
             transform.localRotation = Quaternion.Euler(transform.localRotation.x, 0, transform.localRotation.z);
@@ -184,6 +204,7 @@ public class PathBasedMovement : MonoBehaviour
         rb2d.velocity = Vector2.Lerp(rb2d.velocity, direction, Time.deltaTime * currAccel);
 
         // Flip the entity to the direction of their target position
+        // Also ensure that the health bar is not inverted
         if (direction.x > 0)
         {
             transform.localRotation = Quaternion.Euler(transform.localRotation.x, 0, transform.localRotation.z);
@@ -196,7 +217,7 @@ public class PathBasedMovement : MonoBehaviour
         }
     }
 
-    void OnDrawGizmos()
+    void OnDrawGizmosSelected()
     {
         // Do nothing if there is no path
         if (path == null) return;

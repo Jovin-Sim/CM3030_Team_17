@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Combat : MonoBehaviour
 {
+    // The health bar that shows the entity's hp
     [SerializeField] HealthBar healthBar;
 
-    // The max and current hp of the entity
+    // The hp of the entity
     [SerializeField] float originalHp = 1;
     [SerializeField] float maxHp;
     [SerializeField] float currHp;
 
-    // The original and current attack of the entity
+    // The attack of the entity
     [SerializeField] float originalAtk = 1;
     [SerializeField] float currAtk;
 
-    // The cooldown of the entity
+    // The attack cooldown of the entity
     [SerializeField] float atkCd = 1;
     // The time of the entity's previous attack
     [SerializeField] float lastAtkTime;
@@ -68,9 +69,12 @@ public class Combat : MonoBehaviour
 
     void Awake()
     {
+        // Set the hp and atk to the original hp and atk
         currHp = originalHp;
         maxHp = originalHp;
         currAtk = originalAtk;
+
+        // Get the health bar of the entity and set their hp
         if (healthBar == null) healthBar = GetComponentInChildren<HealthBar>();
         if (healthBar != null)
         {
@@ -91,36 +95,50 @@ public class Combat : MonoBehaviour
     }
 
     /// <summary>
-    /// Attacks the other entity
+    /// Attack another entity
     /// </summary>
     /// <param name="otherEntity">The entity to attack</param>
     public void Attack(Combat otherEntity)
     {
         lastAtkTime = Time.time; // Set the last attack time to the current time
-        otherEntity.ChangeHP(currAtk);
+        otherEntity.ChangeHP(currAtk); // Change the entity's hp by currAtk
     }
 
     /// <summary>
     /// Applies a change to the entity's health
     /// </summary>
-    /// <param name="amount">The amount changed</param>
+    /// <param name="amount">The amount changed, where positive amounts lowers the hp</param>
     public void ChangeHP(float amount)
     {
+        // Lower the hp by amount
         currHp -= amount;
+
+        // If the resulting hp is greater than the max hp, change it to the max hp
         if (currHp > maxHp) currHp = maxHp;
-        else if (currHp <= 0) Die(); // The entity dies if it's hp goes to 0
+
+        // The entity dies if it's hp goes to 0
+        else if (currHp <= 0) Die();
+        
+        // Change the health bar's health value
         if (healthBar != null) healthBar.SetHealth(currHp);
     }
 
     /// <summary>
     /// Applies a change to the entity's max health
     /// </summary>
-    /// <param name="amount">The amount changed</param>
+    /// <param name="amount">The amount changed, where positive amounts lowers the hp</param>
     public void ChangeMaxHP(float amount)
     {
+        // Lower the max hp by amount
         maxHp -= amount;
+
+        // If the resulting max hp is lesser than the current hp
+        // Lower current hp to max hp's value
         if (currHp > maxHp) currHp = maxHp;
-        else if (currHp < maxHp) ChangeHP(amount);
+        // If the max hp was increased, increase current hp by the same amount
+        else if (amount < 0) ChangeHP(amount);
+
+        // Change the health bar's health value
         if (healthBar != null) healthBar.SetMaxHealth(maxHp);
     }
 

@@ -16,19 +16,30 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] int maxSpawnAmount;
     // Time between spawning of newer enemies
     [SerializeField] float spawnIInterval;
+    // Combined spawn chance of all enemies in the zone
     [SerializeField] int totalSpawnChance;
 
     Coroutine spawnEnemyCoroutine;
-    
+
+    #region Getters & Setters
     public Dictionary<int, GameObject> EnemyTypes {  get { return enemyTypes; } }
     public int EnemyCount { get { return enemies.Count; } }
+    #endregion
 
+    /// <summary>
+    /// Set the enemy details of the zone
+    /// </summary>
+    /// <param name="detail">The details of the new zone</param>
     public void SetZoneDetails(ZoneDetails detail)
     {
+        // Check if the lists in detail are null or are unequal
         if (detail.EnemySpawnChances == null || detail.EnemyPrefabs == null) Debug.LogError("No enemy names or prefabs were found");
         if (detail.EnemySpawnChances.Count != detail.EnemyPrefabs.Count) Debug.LogError("Enemy name and prefab mismatch");
+
+        // Remove any existing enemy data
         enemyTypes.Clear();
 
+        // Loop through all enemy types in the new zone and add them to enemyTypes
         totalSpawnChance = 0;
         for (int i = 0; i < detail.EnemySpawnChances.Count; ++i)
         {
@@ -36,6 +47,7 @@ public class EnemyManager : MonoBehaviour
             if (totalSpawnChance < detail.EnemySpawnChances[i]) totalSpawnChance = detail.EnemySpawnChances[i];
         }
 
+        // Set the stats for the new zone's enemy spawning
         this.maxEnemyCount = detail.MaxEnemyCount;
         this.maxSpawnAmount = detail.MaxSpawnAmount;
         this.spawnIInterval = detail.SpawnIInterval;
@@ -56,12 +68,18 @@ public class EnemyManager : MonoBehaviour
         StartSpawnEnemyCoroutine();
     }
 
+    /// <summary>
+    /// Start enemy spawning
+    /// </summary>
     public void StartSpawnEnemyCoroutine()
     {
         if (spawnEnemyCoroutine != null) StopSpawnEnemyCoroutine();
         spawnEnemyCoroutine = StartCoroutine(SpawnEnemy());
     }
 
+    /// <summary>
+    /// Stop enemy spawning
+    /// </summary>
     public void StopSpawnEnemyCoroutine()
     {
         if (spawnEnemyCoroutine == null) return;
@@ -72,7 +90,7 @@ public class EnemyManager : MonoBehaviour
     /// <summary>
     /// Spawns a specific number of a specific enemy
     /// </summary>
-    /// <param name="enemyName">The name of the enemy to spawn</param>
+    /// <param name="enemy">The enemy to spawn</param>
     /// <param name="amount">The amount of enemies to spawn</param>
     /// <param name="together">Boolean for whether to spawn them together</param>
     void SpawnSpecifiedEnemy(GameObject enemy, int amount, bool together)
@@ -92,7 +110,7 @@ public class EnemyManager : MonoBehaviour
         // Spawn the enemies
         for (int i = 0; i < amount; ++i)
         {
-            // Check the map for a random empty position to spawn them in that they can fit into
+            // Check if the enemies are supposed to spawn together
             if (together)
             {
                 // Add some randomness to the base position to avoid overlap
@@ -104,6 +122,7 @@ public class EnemyManager : MonoBehaviour
 
                 pos += randomOffset;
             }
+            // Spawn them in random locations if they are not spawning together
             else pos = GameplayManager.instance.gridMap.GetEmptyPosition(enemySize * 2);
 
             // Spawn the enemy and add them to the list of enemies
@@ -113,17 +132,18 @@ public class EnemyManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Get a random enemy name from the available enemy types
+    /// Get a random enemy from the available enemy types
     /// </summary>
-    /// <returns>The random enemy name</returns>
+    /// <returns>The random enemy</returns>
     GameObject GetRandomEnemy()
     {
         // Return nothing if there are no enemies to choose from
         if (enemyTypes.Count <= 0) Debug.LogError("No enemies found!");
 
+        // Get a random number that is between 0 and total spawn chance
         int rand = Random.Range(0, totalSpawnChance);
 
-        // Return a random enemy
+        // Find the enemy that corresponds to the number
         foreach (var enemyType in enemyTypes)
         {
             if (rand <= enemyType.Key) return enemyType.Value;
@@ -141,9 +161,12 @@ public class EnemyManager : MonoBehaviour
     /// <param name="enemy">The enemy to remove</param>
     public void DespawnEnemy(GameObject enemy)
     {
+        // Do nothing if the enemy is not within the list of enemies
         if (!enemies.Contains(enemy)) return;
 
-        ++GameplayManager.instance.zoneProgression.Score;
+        // Increase the player's score
+        GameplayManager.instance.zoneProgression.Score += 10;
+        // Remove the enemy from the list of enemies
         enemies.Remove(enemy);
     }
 }

@@ -15,9 +15,11 @@ public class ZoneDetails : MonoBehaviour
     // Time between spawning of newer enemies
     [SerializeField] float spawnIInterval;
 
+    #region Getters & Setters
     public List<int> EnemySpawnChances { get { return enemySpawnChances; } }
     public List<GameObject> EnemyPrefabs { get { return enemyPrefabs; } }
     public int MaxEnemyCount { get { return maxEnemyCount; } }
     public int MaxSpawnAmount { get { return maxSpawnAmount; } }
     public float SpawnIInterval { get { return spawnIInterval; } }
+    #endregion
 }

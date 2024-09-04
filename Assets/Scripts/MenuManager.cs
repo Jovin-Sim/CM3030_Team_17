@@ -52,4 +52,9 @@ public class MenuManager : MonoBehaviour
         ToggleMenu(endGameMenuUI.transform.parent.gameObject, true);
         endGameMenuUI.EndGame(win);
     }
+
+    void OnDestroy()
+    {
+        GameManager.instance.inputHandler.OnPause -= HandlePause;
+    }
 }

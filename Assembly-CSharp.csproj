@@ -78,7 +78,6 @@
     <Compile Include="Assets\Scripts\Interactables\UpgradeCard\UpgradeCardSpawner.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Map\AcidLogic.cs" />
-    <Compile Include="Assets\Scripts\Map\GridCluster.cs" />
     <Compile Include="Assets\Scripts\Map\GridMap.cs" />
     <Compile Include="Assets\Scripts\Map\GridNode.cs" />
     <Compile Include="Assets\Scripts\Map\Pathfinding.cs" />

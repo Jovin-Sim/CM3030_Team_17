@@ -11,7 +11,6 @@ public class UpgradeCard : MonoBehaviour
 
     void Start()
     {
-
         // Update the text on the card if applicable
         if (cardText != null)
         {

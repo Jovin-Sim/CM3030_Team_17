@@ -137,4 +137,12 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    private void OnDestroy()
+    {
+        if (inputHandler == null) return;
+
+        inputHandler.OnFireStart -= StartFiring;
+        inputHandler.OnFireStop -= StopFiring;
+    }
 }

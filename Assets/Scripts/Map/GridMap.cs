@@ -60,7 +60,7 @@ public class GridMap : MonoBehaviour
         grid = FindObjectOfType<Grid>();
     }
 
-    void OnDrawGizmos()
+    void OnDrawGizmosSelected()
     {
         // Do nothing if there are no nodes or if the nodes should not be displayed
         if (allNodes == null || partitionedNodes == null || !showNodes) return;

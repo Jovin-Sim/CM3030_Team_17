@@ -5,23 +5,27 @@ using static UnityEngine.UI.Image;
 
 public class Explosives : MonoBehaviour
 {
-    public Explosion explosionData;
+    // The explosion data
+    [SerializeField] Explosion explosionData;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Checks if a bullet hit the explosive
         if (collision.GetComponent<Bullet>())
         {
-            explosionData.Explode(gameObject);
-            Destroy(collision.gameObject);
+            // Causes an explosion if the bullet hit the explosive
+            explosionData.Explode(transform.position);
 
-            // Remove game object
+            // Destroy both game objects
+            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
     }
 
     void OnDrawGizmosSelected()
     {
+        // Draws the range of the explosion
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, explosionData.radius);
+        Gizmos.DrawWireSphere(transform.position, explosionData.Radius);
     }
 }

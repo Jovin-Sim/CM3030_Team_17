@@ -24,7 +24,7 @@ public class Lure : MonoBehaviour
         colliderBuffer = new Collider2D[10];
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = active ? Color.red : Color.green;
 

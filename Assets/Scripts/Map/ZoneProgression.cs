@@ -91,9 +91,9 @@ public class ZoneProgression : MonoBehaviour
 
     public void IndicateNextZone()
     {
-        if (zones.Count <= currentZone)
+        if (zones.Count <= currentZone + 1)
         {
-            Debug.LogWarning("No next zone was found!");
+            GameplayManager.instance.EndGame(true);
             return;
         }
         if (nextZoneIndicators.Count == 0 || nextZoneIndicators[currentZone] == null)
@@ -121,7 +121,7 @@ public class ZoneProgression : MonoBehaviour
         ++currentZone;
         if (zones.Count <= currentZone)
         {
-            GameplayManager.instance.EndGame(true);
+            Debug.LogWarning("No next zone was found!");
             return;
         }
         Vector3 zone = zones[currentZone];

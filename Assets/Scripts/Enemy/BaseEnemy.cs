@@ -10,7 +10,6 @@ public class BaseEnemy : MonoBehaviour
     // Composition classes  
     Combat combat;
     PathBasedMovement movement;
-    [SerializeField] int spawnChance;
     // The target the entity is chasing
     [SerializeField] Collider2D target = null;
 
@@ -25,7 +24,6 @@ public class BaseEnemy : MonoBehaviour
             if (movement != null) movement.Target = value; // Set movement's target too
         }
     }
-    public int SpawnChance { get { return spawnChance; } set { spawnChance = value; } }
     #endregion
 
     private void Awake()
@@ -33,24 +31,27 @@ public class BaseEnemy : MonoBehaviour
         combat = GetComponent<Combat>();
         movement = GetComponent<PathBasedMovement>();
 
+        // Set the target as the player if the enemy has no target
         if (target != null) return;
-        // Set the target as the player
         Target = GameplayManager.instance.Player.GetComponent<Collider2D>();
     }
 
     private void FixedUpdate()
     {
-        if (target != null) return;
         // Set the target as the player if the enemy has no target
-        target = GameplayManager.instance.Player.GetComponent<Collider2D>();
-        movement.Target = target;
+        if (target != null) return;
+        Target = GameplayManager.instance.Player.GetComponent<Collider2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Collisions between enemies are disabled,
-        // therefore any collisions will be between 2 different types of entities
+        // Therefore any collisions will be between 2 different types of entities
+
+        // Check if the enemy can attack
         if (collision.collider == null || !combat.TryAttack()) return;
+
+        // Attack the other entity if they can
         if (collision.transform.TryGetComponent<Combat>(out Combat otherEntity)) combat.Attack(otherEntity);
     }
 }
