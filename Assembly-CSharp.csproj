@@ -99,6 +99,16 @@
     <Compile Include="Assets\Scripts\Player\PlayerInputHandler.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Shooting.cs" />
+    <Compile Include="Assets\Scripts\Temp\Collectable.cs" />
+    <Compile Include="Assets\Scripts\Temp\CollectableSpawner.cs" />
+    <Compile Include="Assets\Scripts\Temp\HealthCollectableBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Temp\HealthController.cs" />
+    <Compile Include="Assets\Scripts\Temp\ICollectableBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Temp\InvincibilityController.cs" />
+    <Compile Include="Assets\Scripts\Temp\PlayerDamagedInvincibility.cs" />
+    <Compile Include="Assets\Scripts\Temp\ScoreController.cs" />
+    <Compile Include="Assets\Scripts\Temp\ScoreUI.cs" />
+    <Compile Include="Assets\Scripts\Temp\SpriteFlash.cs" />
     <Compile Include="Assets\Scripts\Weapons\Bullet.cs" />
     <Compile Include="Assets\Scripts\Weapons\Particles.cs" />
   </ItemGroup>

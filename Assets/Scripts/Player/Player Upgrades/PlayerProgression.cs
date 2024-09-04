@@ -17,7 +17,11 @@ public class PlayerProgression : MonoBehaviour
             if (card == null) return;
 
             if (card.TryGetComponent<Button>(out Button cardButton))
+            {
                 cardButton.onClick.AddListener(() => OnCardSelected(card));
+                if (cardButton.TryGetComponent<Animator>(out Animator cardAnimator))
+                    cardButton.onClick.AddListener(() => cardAnimator.Play("UpgradeSelected"));
+            }
         }
     }
 
