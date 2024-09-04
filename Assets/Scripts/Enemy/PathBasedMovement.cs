@@ -159,8 +159,16 @@ public class PathBasedMovement : MonoBehaviour
         Vector2 direction = (targetPosition - transform.position).normalized;
 
         // Flip the entity to the direction of their target position
-        if (direction.x > 0) transform.localRotation = Quaternion.Euler(transform.localRotation.x, 0, transform.localRotation.z);
-        else transform.localRotation = Quaternion.Euler(transform.localRotation.x, 180, transform.localRotation.z);
+        if (direction.x > 0)
+        {
+            transform.localRotation = Quaternion.Euler(transform.localRotation.x, 0, transform.localRotation.z);
+            transform.GetComponentInChildren<Canvas>().transform.localRotation = Quaternion.Euler(transform.localRotation.x, 0, transform.localRotation.z);
+        }
+        else
+        { 
+            transform.localRotation = Quaternion.Euler(transform.localRotation.x, 180, transform.localRotation.z);
+            transform.GetComponentInChildren<Canvas>().transform.localRotation = Quaternion.Euler(transform.localRotation.x, 180, transform.localRotation.z);
+        }
     }
 
     /// <summary>
@@ -176,8 +184,16 @@ public class PathBasedMovement : MonoBehaviour
         rb2d.velocity = Vector2.Lerp(rb2d.velocity, direction, Time.deltaTime * currAccel);
 
         // Flip the entity to the direction of their target position
-        if (direction.x > 0) transform.localRotation = Quaternion.Euler(transform.localRotation.x, 0, transform.localRotation.z);
-        else transform.localRotation = Quaternion.Euler(transform.localRotation.x, 180, transform.localRotation.z);
+        if (direction.x > 0)
+        {
+            transform.localRotation = Quaternion.Euler(transform.localRotation.x, 0, transform.localRotation.z);
+            transform.GetComponentInChildren<Canvas>().transform.localRotation = Quaternion.Euler(transform.localRotation.x, 0, transform.localRotation.z);
+        }
+        else
+        {
+            transform.localRotation = Quaternion.Euler(transform.localRotation.x, 180, transform.localRotation.z);
+            transform.GetComponentInChildren<Canvas>().transform.localRotation = Quaternion.Euler(transform.localRotation.x, 180, transform.localRotation.z);
+        }
     }
 
     void OnDrawGizmos()

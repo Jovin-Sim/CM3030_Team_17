@@ -41,14 +41,9 @@ public class HealthBar : MonoBehaviour
     {
         if (valuetext != null)
         {
-            int truncatedHealth = Mathf.FloorToInt(health); // Truncate the float to an integer
-            valuetext.text = truncatedHealth.ToString(); // Convert the integer to a string
+            int truncatedHealth = Mathf.FloorToInt(health);
+            valuetext.text = truncatedHealth.ToString();
+            valuetext.color = gradient.Evaluate(slider.normalizedValue);
         }
     }
-
-    public void toggleVisibility(bool isVisible)
-    {
-
-    }
-
 }

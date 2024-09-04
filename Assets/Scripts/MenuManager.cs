@@ -1,38 +1,48 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
     bool isMenuOpen = false;
 
+    [SerializeField] GameObject pauseMenuUI;
+
     public bool IsMenuOpen { get { return isMenuOpen; } }
+
+    private void Start()
+    {
+        GameManager.instance.inputHandler.OnPause += HandlePause;
+    }
 
     public void ToggleMenu(GameObject menu, bool openMenu)
     {
         if (menu == null) return;
 
+        PlayerInputHandler inputHandler = GameManager.instance.inputHandler;
+        if (inputHandler == null)
+        {
+            Debug.LogError("Input handler not found!");
+            return;
+        }
+
         if (openMenu && !isMenuOpen)
         {
             menu.SetActive(true);
             isMenuOpen = true;
-            Time.timeScale = 0.0f;
-            if (GameplayManager.instance.Player != null)
-            {
-                GameplayManager.instance.Player.TogglePlayerControllability(false);
-                GameplayManager.instance.Player.ToggleUIControllability(true);
-            }
+            inputHandler.ChangeActionMap("UI", 0f);
         }
         else
         {
             menu.SetActive(false);
             isMenuOpen = false;
-            Time.timeScale = 1.0f;
-            if (GameplayManager.instance.Player != null)
-            {
-                GameplayManager.instance.Player.TogglePlayerControllability(true);
-                GameplayManager.instance.Player.ToggleUIControllability(false);
-            }
+            inputHandler.ChangeActionMap("Player", 1f);
         }
+    }
+
+    public void HandlePause()
+    {
+        ToggleMenu(pauseMenuUI, !isMenuOpen);
     }
 }

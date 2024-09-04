@@ -8,8 +8,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb2d;
 
     #region Input Variables
-    PlayerInput input;
-    PlayerAC actions;
+    PlayerInputHandler inputHandler;
     #endregion
 
     #region Movement Variables
@@ -45,65 +44,37 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        input = GetComponent<PlayerInput>();
+        inputHandler = GameManager.instance.inputHandler;
         combat = GetComponent<Combat>();
         firePoint = transform.Find("FirePoint");
 
-        // Enable the player controls
-        actions = new PlayerAC();
-        actions.Player.Enable();
-        // Add the logic of firing to the "Fire" input
-        actions.Player.Fire.started += _ => StartFiring();
-        actions.Player.Fire.canceled += _ => StopFiring();
-
         currMoveSpeed = originalMoveSpeed;
+
+        inputHandler.OnFireStart += StartFiring;
+        inputHandler.OnFireStop += StopFiring;
     }
 
     private void FixedUpdate()
     {
         // Handle the player's movement and look
-        if (canMove) Movement(actions.Player.Move);
-        Look(actions.Player.Look);
-    }
-
-    public void TogglePlayerControllability(bool canControl)
-    {
-        if (canControl) actions.Player.Enable();
-        else actions.Player.Disable();
-    }
-
-    public void ToggleUIControllability(bool canControl)
-    {
-        if (canControl) actions.UI.Enable();
-        else actions.UI.Disable();
+        if (canMove) Movement(inputHandler.MoveInput);
+        Look(inputHandler.LookInput);
     }
 
     /// <summary>
     /// Handle the player's movement input
     /// </summary>
-    /// <param name="action">The player movement input</param>
-    void Movement(InputAction action)
+    void Movement(Vector2 movement)
     {
-        // Retrieve the movement input data
-        Vector2 movement = action.ReadValue<Vector2>();
-
-        // Move the player based on the input data
         rb2d.velocity = movement * currMoveSpeed;
     }
 
     /// <summary>
     /// Handle the player's look input
     /// </summary>
-    /// <param name="action">The player look input</param>
-    void Look(InputAction action)
+    void Look(Vector2 cursorPos)
     {
-        // Retrieve the look input data
-        Vector2 cursorPos = Camera.main.ScreenToWorldPoint(action.ReadValue<Vector2>());
-
-        // Get the direction the player character should look at
-        Vector2 lookDir = cursorPos - rb2d.position;
-
-        // Rotate the player's character to look at the mouse
+        Vector2 lookDir = (Vector2)Camera.main.ScreenToWorldPoint(cursorPos) - rb2d.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         rb2d.rotation = angle;
     }
@@ -155,7 +126,7 @@ public class PlayerController : MonoBehaviour
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * bulletSpeed, ForceMode2D.Impulse);
         if (bullet.TryGetComponent<Bullet>(out Bullet b)) 
             b.Init(combat.CurrAtk, bulletPierce, bulletExplode);
-            GameplayManager.instance.audioManager.PlaySFX(GameplayManager.instance.audioManager.gunshot);
+            GameManager.instance.audioManager.PlaySFX(GameManager.instance.audioManager.gunshot);
     }
 
     public void Upgrade(string upgradeType, float multiplier)
@@ -170,10 +141,5 @@ public class PlayerController : MonoBehaviour
     public void GameOver()
     {
         Destroy(gameObject);
-    }
-
-    void OnDisable()
-    {
-        actions.Player.Disable();
     }
 }
