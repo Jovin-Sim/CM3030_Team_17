@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/AssetTiles/Arrow.png.meta
-guid: dae9e565e204c5d438536f4c8d6c7422
-========
-guid: 965619b212324f64983f24ad91c14ae5
->>>>>>>> benji:Assets/AssetTiles/UpgradeCards/UpgradeCard.png.meta
+guid: 8e24803357819294a9cfeb589f2e939c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
