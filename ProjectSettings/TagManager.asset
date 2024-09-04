@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Audio
   layers:
   - Default
   - TransparentFX
@@ -13,13 +14,13 @@ TagManager:
   - UI
   - 
   - 
-  - Sprites
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Floor
+  - Wall
+  - Bullet
+  - Roof
+  - Water
   - 
   - 
   - 
@@ -40,4 +41,34 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 3775097755
+    locked: 0
+  - name: Obstruction
+    uniqueID: 1599352577
+    locked: 0
+  - name: Interactables
+    uniqueID: 574661507
+    locked: 0
+  - name: Enemy
+    uniqueID: 580153279
+    locked: 0
+  - name: Player
+    uniqueID: 1732883447
+    locked: 0
+  - name: Projectile
+    uniqueID: 465808039
+    locked: 0
+  - name: Special Floor
+    uniqueID: 37466353
+    locked: 0
+  - name: Enemy UI
+    uniqueID: 2091359657
+    locked: 0
+  - name: Roof
+    uniqueID: 1096631545
+    locked: 0
+  - name: UI
+    uniqueID: 3674803119
     locked: 0

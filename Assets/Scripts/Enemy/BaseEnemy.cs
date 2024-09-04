@@ -2,54 +2,56 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles the enemy's gameplay logic.
+/// </summary>
 public class BaseEnemy : MonoBehaviour
 {
-    int id = 0;
-    Vector3 startingPosition;
-
-    Rigidbody2D rb2d;
-
-    [SerializeField] float currentMoveSpeed;
-    [SerializeField] float originalMoveSpeed = 0f;
-    [SerializeField] float rotationSpeed = 0f;
-    [SerializeField] bool canMove = true;
-
+    // Composition classes  
+    Combat combat;
+    PathBasedMovement movement;
+    // The target the entity is chasing
     [SerializeField] Collider2D target = null;
+
+    #region Getters & Setters
+    public Combat Combat { get { return combat; } }
+    public PathBasedMovement Movement { get { return movement; } }
+    public Collider2D Target
+    {
+        get { return target; }
+        set {
+            target = value;
+            if (movement != null) movement.Target = value; // Set movement's target too
+        }
+    }
+    #endregion
 
     private void Awake()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        combat = GetComponent<Combat>();
+        movement = GetComponent<PathBasedMovement>();
 
-        currentMoveSpeed = originalMoveSpeed;
+        // Set the target as the player if the enemy has no target
+        if (target != null) return;
+        Target = GameplayManager.instance.Player.GetComponent<Collider2D>();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void FixedUpdate()
     {
-        
+        // Set the target as the player if the enemy has no target
+        if (target != null) return;
+        Target = GameplayManager.instance.Player.GetComponent<Collider2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        RotateTowardsTarget();
-        SetVelocity();
-    }
+        // Collisions between enemies are disabled,
+        // Therefore any collisions will be between 2 different types of entities
 
-    void RotateTowardsTarget()
-    {
-        if (!canMove || !target) return;
+        // Check if the enemy can attack
+        if (collision.collider == null || !combat.TryAttack()) return;
 
-        Quaternion targetRotation = Quaternion.LookRotation(transform.forward, target.transform.position);
-        Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-
-        rb2d.SetRotation(rotation);
-    }
-
-    void SetVelocity()
-    {
-        if (!canMove) return;
-        
-        rb2d.velocity = transform.up * currentMoveSpeed;
+        // Attack the other entity if they can
+        if (collision.transform.TryGetComponent<Combat>(out Combat otherEntity)) combat.Attack(otherEntity);
     }
 }
