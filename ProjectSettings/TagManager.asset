@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - Sprites
-  - 
+  - Enemies
   - 
   - 
   - 
@@ -40,4 +40,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3033634677
+    locked: 0
+  - name: Collectables
+    uniqueID: 4195409175
+    locked: 0
+  - name: Bullet
+    uniqueID: 3430066157
+    locked: 0
+  - name: Player
+    uniqueID: 2240743647
+    locked: 0
+  - name: Enemy
+    uniqueID: 1240397725
     locked: 0
