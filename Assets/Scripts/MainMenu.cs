@@ -9,14 +9,15 @@ public class MainMenu : MonoBehaviour
     // Initialize AudioManager
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        audioManager = GameManager.instance.audioManager;
     }
 
     public void StartGame()
     {
         // Load the main game scene (replace "GameScene" with your actual scene name)
         audioManager.PlaySFX(audioManager.buttonSelect);
-        SceneManager.LoadScene("MainScene");
+        GameManager.instance.inputHandler.ChangeActionMap("Player", 1f);
+        SceneManager.LoadScene("ReyScene");
     }
 
     public void ShowInstructions()

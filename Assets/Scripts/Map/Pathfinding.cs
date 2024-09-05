@@ -47,8 +47,8 @@ public class Pathfinding : MonoBehaviour
 
     public Vector3[] AStarPathfinding(Vector3 startPos, Vector3 endPos, float colliderSize = 0f)
     {
-        Node startNode = gridNodes.GetClosestNode(startPos);
-        Node endNode = gridNodes.GetClosestNode(endPos);
+        Node startNode = gridNodes.GetClosestNode(startPos, true);
+        Node endNode = gridNodes.GetClosestNode(endPos, true);
 
         if (startNode == null || endNode == null)
         {
@@ -83,7 +83,6 @@ public class Pathfinding : MonoBehaviour
         while (openList.Count > 0)
         {
             ++numCount;
-            Debug.Log("AStarPathfinding Attempt " + numCount);
 
             Node currNode = GetLowestFCostNode();
 
