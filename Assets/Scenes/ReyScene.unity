@@ -2049,8 +2049,8 @@ MonoBehaviour:
   - {fileID: 2896475373766084987, guid: 9f7165f3692aacb4e87f46c4c2e7ce21, type: 3}
   - {fileID: 4410518327987768689, guid: 3a1b2c3310d16f846b1b73cc6902a9f9, type: 3}
   - {fileID: 1076470989566509444, guid: 679ed88cc492dc048add2b08e1b60c08, type: 3}
-  maxEnemyCount: 1
-  maxSpawnAmount: 4
+  maxEnemyCount: 8
+  maxSpawnAmount: 2
   spawnIInterval: 2
 --- !u!4 &427903941
 Transform:
@@ -28563,8 +28563,8 @@ MonoBehaviour:
   - {fileID: 2896475373766084987, guid: 9f7165f3692aacb4e87f46c4c2e7ce21, type: 3}
   - {fileID: 4410518327987768689, guid: 3a1b2c3310d16f846b1b73cc6902a9f9, type: 3}
   - {fileID: 1076470989566509444, guid: 679ed88cc492dc048add2b08e1b60c08, type: 3}
-  maxEnemyCount: 1
-  maxSpawnAmount: 5
+  maxEnemyCount: 10
+  maxSpawnAmount: 2
   spawnIInterval: 1
 --- !u!4 &1540699821
 Transform:
@@ -28797,8 +28797,8 @@ MonoBehaviour:
   - {fileID: 4353770627799583166, guid: 43a8e0f1ecdac0f40a96400f557aceb8, type: 3}
   - {fileID: 2896475373766084987, guid: 9f7165f3692aacb4e87f46c4c2e7ce21, type: 3}
   - {fileID: 4410518327987768689, guid: 3a1b2c3310d16f846b1b73cc6902a9f9, type: 3}
-  maxEnemyCount: 1
-  maxSpawnAmount: 4
+  maxEnemyCount: 6
+  maxSpawnAmount: 2
   spawnIInterval: 2
 --- !u!4 &1675077839
 Transform:
@@ -28846,8 +28846,8 @@ MonoBehaviour:
   enemySpawnChances: 01000000
   enemyPrefabs:
   - {fileID: 2896475373766084987, guid: 9f7165f3692aacb4e87f46c4c2e7ce21, type: 3}
-  maxEnemyCount: 1
-  maxSpawnAmount: 3
+  maxEnemyCount: 4
+  maxSpawnAmount: 2
   spawnIInterval: 2
 --- !u!4 &1702664707
 Transform:
@@ -33714,22 +33714,22 @@ PrefabInstance:
     - target: {fileID: 1925235391804206206, guid: 7c4bc5a36f9f0bc42bbaff03a0d9aaf1,
         type: 3}
       propertyPath: scoresToNextZone.Array.data[0]
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1925235391804206206, guid: 7c4bc5a36f9f0bc42bbaff03a0d9aaf1,
         type: 3}
       propertyPath: scoresToNextZone.Array.data[1]
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1925235391804206206, guid: 7c4bc5a36f9f0bc42bbaff03a0d9aaf1,
         type: 3}
       propertyPath: scoresToNextZone.Array.data[2]
-      value: 3
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1925235391804206206, guid: 7c4bc5a36f9f0bc42bbaff03a0d9aaf1,
         type: 3}
       propertyPath: scoresToNextZone.Array.data[3]
-      value: 4
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 1925235391804206206, guid: 7c4bc5a36f9f0bc42bbaff03a0d9aaf1,
         type: 3}

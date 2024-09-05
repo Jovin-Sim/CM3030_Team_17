@@ -12,6 +12,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip gunshot;
     public AudioClip explosion;
     public AudioClip enemyAttack;
+    public AudioClip enemyDeath;
+    public AudioClip playerDeath;
+    public AudioClip winGame;
     
     private void Start()
     {

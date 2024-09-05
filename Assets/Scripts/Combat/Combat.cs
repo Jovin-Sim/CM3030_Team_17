@@ -102,6 +102,7 @@ public class Combat : MonoBehaviour
     {
         lastAtkTime = Time.time; // Set the last attack time to the current time
         otherEntity.ChangeHP(currAtk); // Change the entity's hp by currAtk
+        GameManager.instance.audioManager.PlaySFX(GameManager.instance.audioManager.enemyAttack);
     }
 
     /// <summary>
@@ -150,11 +151,16 @@ public class Combat : MonoBehaviour
         // Execute game over if the entity is the player
         if (gameObject == GameplayManager.instance.Player.gameObject)
         {
+            GameManager.instance.audioManager.PlaySFX(GameManager.instance.audioManager.playerDeath);
             GameplayManager.instance.EndGame(false);
             return;
         }
-        // Handle enemy despawning
-        GameplayManager.instance.enemyManager.DespawnEnemy(gameObject);
-        Destroy(gameObject);
+        else
+        {
+            // Handle enemy despawning
+            GameManager.instance.audioManager.PlaySFX(GameManager.instance.audioManager.enemyDeath);
+            GameplayManager.instance.enemyManager.DespawnEnemy(gameObject);
+            Destroy(gameObject);
+        }
     }
 }

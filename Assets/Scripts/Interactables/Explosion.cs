@@ -25,6 +25,8 @@ public class Explosion : ScriptableObject
         // Show effect
         //Instantiate(explosionEffect, transform.position, transform.rotation);
 
+        GameManager.instance.audioManager.PlaySFX(GameManager.instance.audioManager.explosion);
+
         // Get nearby objects
         Collider2D[] colliders = Physics2D.OverlapCircleAll(origin, radius, LayerToHit);
 
