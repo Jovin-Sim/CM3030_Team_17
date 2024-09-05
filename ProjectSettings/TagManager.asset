@@ -21,7 +21,7 @@ TagManager:
   - Bullet
   - Roof
   - Water
-  - 
+  - Interactables
   - 
   - 
   - 
@@ -68,6 +68,9 @@ TagManager:
     locked: 0
   - name: Roof
     uniqueID: 1096631545
+    locked: 0
+  - name: Explosion
+    uniqueID: 3854820027
     locked: 0
   - name: UI
     uniqueID: 3674803119

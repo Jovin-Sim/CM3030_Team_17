@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6dc9d49097d4684e918036c76bbfb79, type: 3}
   m_Name: Explosion
   m_EditorClassIdentifier: 
-  damage: 2
+  explosionEffect: {fileID: 938197796971160991, guid: 64a1969bff518b64e8486977fa173b0a,
+    type: 3}
+  damage: 10
   radius: 3
   force: 3
   LayerToHit:

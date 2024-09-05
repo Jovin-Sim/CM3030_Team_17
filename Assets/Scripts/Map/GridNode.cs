@@ -18,6 +18,11 @@ public class Node
     public float HCost { get; set; }  // Cost from the end node
     public float FCost => GCost + HCost;  // Total cost
 
+    /// <summary>
+    /// A constructor for node
+    /// </summary>
+    /// <param name="position">The position of the node</param>
+    /// <param name="nodeType">The type of the node</param>
     public Node(Vector3 position, NodeType nodeType)
     {
         Position = position;

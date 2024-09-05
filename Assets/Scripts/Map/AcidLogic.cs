@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class AcidLogic : WaterLogic
 {
-    [SerializeField] float damagePerTurn; // The damage the acid does every second
-    [SerializeField] float damageCooldown; // The cooldown between each hit from the acid
+    [Tooltip("The damage the acid does every second")]
+    [SerializeField] float damagePerTurn;
+    [Tooltip("The cooldown between each hit from the acid")]
+    [SerializeField] float damageCooldown;
 
     Coroutine damageAffectedEntities;
 

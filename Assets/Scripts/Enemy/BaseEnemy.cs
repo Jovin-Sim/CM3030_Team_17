@@ -10,7 +10,8 @@ public class BaseEnemy : MonoBehaviour
     // Composition classes  
     Combat combat;
     PathBasedMovement movement;
-    // The target the entity is chasing
+
+    [Tooltip("The target the entity is chasing (Read Only)")]
     [SerializeField] Collider2D target = null;
 
     #region Getters & Setters
@@ -43,7 +44,7 @@ public class BaseEnemy : MonoBehaviour
         Target = GameplayManager.instance.Player.GetComponent<Collider2D>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         // Collisions between enemies are disabled,
         // Therefore any collisions will be between 2 different types of entities

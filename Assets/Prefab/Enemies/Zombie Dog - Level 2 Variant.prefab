@@ -1,17 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &2682960111269457782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4878814101802091174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9038328f9527b4848ac3ec0102e6bb00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2792862514879039743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42,12 +30,17 @@ PrefabInstance:
     - target: {fileID: 6480156241584007334, guid: 9f7165f3692aacb4e87f46c4c2e7ce21,
         type: 3}
       propertyPath: maxHp
-      value: 40
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480156241584007334, guid: 9f7165f3692aacb4e87f46c4c2e7ce21,
+        type: 3}
+      propertyPath: originalHp
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6480156241584007334, guid: 9f7165f3692aacb4e87f46c4c2e7ce21,
         type: 3}
       propertyPath: originalAtk
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6917161881991476890, guid: 9f7165f3692aacb4e87f46c4c2e7ce21,
         type: 3}
@@ -107,13 +100,7 @@ PrefabInstance:
     - target: {fileID: 8008069786093728266, guid: 9f7165f3692aacb4e87f46c4c2e7ce21,
         type: 3}
       propertyPath: originalAccel
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f7165f3692aacb4e87f46c4c2e7ce21, type: 3}
---- !u!1 &4878814101802091174 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7311376546995505753, guid: 9f7165f3692aacb4e87f46c4c2e7ce21,
-    type: 3}
-  m_PrefabInstance: {fileID: 2792862514879039743}
-  m_PrefabAsset: {fileID: 0}

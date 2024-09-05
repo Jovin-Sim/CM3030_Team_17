@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c81725ab596f5e43b0510dfa034f863, type: 3}
+  m_Script: {fileID: 11500000, guid: 598a3975d277ca54ca359384881ba233, type: 3}
   m_Name: Fire Rate Powerup
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: c403dd51b1ce6344a84d18ba6c9606a1, type: 3}
   powerupName: Fire Rate Powerup
-  description: 
   duration: -1
-  amount: 0
+  limitedUse: 0
   percentage: 20

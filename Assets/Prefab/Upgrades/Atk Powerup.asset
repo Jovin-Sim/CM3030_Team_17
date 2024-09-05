@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50fb2d725141d8e4cb751136e80c2825, type: 3}
+  m_Script: {fileID: 11500000, guid: 53cad67c8ab44e04ea0d7ec3f4af73ba, type: 3}
   m_Name: Atk Powerup
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: e2f86ce4655891d4391b2f590f11ef0b, type: 3}
   powerupName: Attack Powerup
-  description: 
   duration: -1
-  amount: 0
+  limitedUse: 0
   percentage: 20

@@ -9,13 +9,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3623205734568843165, guid: 43a8e0f1ecdac0f40a96400f557aceb8,
         type: 3}
-      propertyPath: maxHp
-      value: 40
+      propertyPath: originalHp
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -3623205734568843165, guid: 43a8e0f1ecdac0f40a96400f557aceb8,
         type: 3}
       propertyPath: originalAtk
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1042871284126403436, guid: 43a8e0f1ecdac0f40a96400f557aceb8,
         type: 3}
@@ -100,7 +100,7 @@ PrefabInstance:
     - target: {fileID: 8897858710531945167, guid: 43a8e0f1ecdac0f40a96400f557aceb8,
         type: 3}
       propertyPath: originalAccel
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43a8e0f1ecdac0f40a96400f557aceb8, type: 3}

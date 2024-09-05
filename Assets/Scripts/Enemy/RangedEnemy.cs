@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class RangedEnemy : BaseEnemy
 {
-    [SerializeField] ParticleSystem rangedParticles; // The prefab of the ranged particles
+    [Tooltip("The prefab of the ranged particles")]
+    [SerializeField] ParticleSystem rangedParticles;
     LayerMask obstacleLayer; // The obstacle layer
 
     private void Start()

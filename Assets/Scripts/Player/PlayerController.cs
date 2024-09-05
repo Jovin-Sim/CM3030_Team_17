@@ -5,19 +5,19 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    // The rigidbody of the gameobject
     Rigidbody2D rb2d;
-
-    #region Input Variables
+    // The input handler
     PlayerInputHandler inputHandler;
-    #endregion
 
     #region Movement Variables
     [Header("Movement Variables")]
-    [SerializeField] float currMoveSpeed; // The move speed the player currently has
-    [SerializeField] float originalMoveSpeed = 0f; // The move speed the player starts with, free of any other effects
+    [Tooltip("The speed the player starts at")]
+    [SerializeField] float originalMoveSpeed = 0f;
+    [Tooltip("The current speed of the player (Read Only)")]
+    [SerializeField] float currMoveSpeed;
+    [Tooltip("A boolean for if the player can move (Read Only)")]
     [SerializeField] bool canMove = true;
-
-    Vector2 minBounds, maxBounds;
     #endregion
 
     #region Combat Variables
@@ -25,21 +25,30 @@ public class PlayerController : MonoBehaviour
     Combat combat;
     Transform firePoint; // The point the player's bullets come out from
     Coroutine firingCoroutine;
+
+    [Tooltip("The rate of fire of the player")]
     [SerializeField] float fireRate = 0.3f;
+    [Tooltip("A boolean for if  the player can fire rapidly")]
     [SerializeField] bool rapidFire = false;
-    [SerializeField] GameObject bulletPrefab; // The prefab of the bullet
-    [SerializeField] float bulletSpeed = 5f; // The speed of the bullet
-    [SerializeField] bool bulletPierce = false; // A boolean for if the bullets can pierce through enemies
-    [SerializeField] bool bulletExplode = false; // A boolean for if the bullets explode on impact
+
+    [Tooltip("The prefab of the bullet")]
+    [SerializeField] GameObject bulletPrefab;
+    [Tooltip("The speed of the bullet")]
+    [SerializeField] float bulletSpeed = 5f;
+
+    [Tooltip("A boolean for if the bullets can pierce through enemies")]
+    [SerializeField] bool bulletPierce = false;
+    [Tooltip("A boolean for if the bullets explode on impact")]
+    [SerializeField] bool bulletExplode = false;
     #endregion
 
+    #region Getters & Setters
     public float CurrMoveSpeed { get { return currMoveSpeed; } set { currMoveSpeed = value; } }
-    public Vector2 MinBounds { get { return minBounds; } set { minBounds = value; } }
-    public Vector2 MaxBounds { get {return maxBounds; } set { maxBounds = value; } }
     public Combat Combat { get { return combat; } }
     public float FireRate { get { return fireRate; } set { fireRate = value; } }
     public bool BulletPierce { get { return bulletPierce; } set { bulletPierce = value; } }
     public bool BulletExplode { get { return bulletExplode; } set { bulletExplode = value; } }
+    #endregion
 
     private void Awake()
     {
@@ -48,6 +57,7 @@ public class PlayerController : MonoBehaviour
         combat = GetComponent<Combat>();
         firePoint = transform.Find("FirePoint");
 
+        // Set the player's current speed
         currMoveSpeed = originalMoveSpeed;
 
         inputHandler.OnFireStart += StartFiring;
@@ -66,6 +76,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Movement(Vector2 movement)
     {
+        // Change the player's velocity
         rb2d.velocity = movement * currMoveSpeed;
     }
 
@@ -74,11 +85,20 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Look(Vector2 cursorPos)
     {
+        // Get the look direction of the player
         Vector2 lookDir = (Vector2)Camera.main.ScreenToWorldPoint(cursorPos) - rb2d.position;
+        
+        // Get the angle of the look direction
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+
+        // Change the rotation of the gameobject to look towards the mouse
         rb2d.rotation = angle;
     }
 
+    /// <summary>
+    /// Lock the player's movement for a specified time
+    /// </summary>
+    /// <param name="time">The time to lock the player's movement</param>
     public IEnumerator LockMovement(float time = 0.5f)
     {
         canMove = false;
@@ -86,11 +106,17 @@ public class PlayerController : MonoBehaviour
         canMove = true;
     }
 
+    /// <summary>
+    /// Start the firing coroutine
+    /// </summary>
     void StartFiring()
     {
         firingCoroutine = StartCoroutine(Firing());
     }
 
+    /// <summary>
+    /// Stop the firing coroutine
+    /// </summary>
     void StopFiring()
     {
         if (firingCoroutine == null) return;
@@ -98,14 +124,25 @@ public class PlayerController : MonoBehaviour
         firingCoroutine = null;
     }
 
+    /// <summary>
+    /// The firing coroutine
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Firing()
     {
+        // Fire a bullet
         FireOnce();
-        if (!rapidFire) yield return null;
+
+        yield return new WaitForSeconds(fireRate);
+
+        // End the function if rapid fire is disabled
+        if (!rapidFire) yield break;
+
+        // Rapid fire
         while (true)
         {
-            yield return new WaitForSeconds(fireRate);
             FireOnce();
+            yield return new WaitForSeconds(fireRate);
         }
     }
 
@@ -127,15 +164,6 @@ public class PlayerController : MonoBehaviour
         if (bullet.TryGetComponent<Bullet>(out Bullet b)) 
             b.Init(combat.CurrAtk, bulletPierce, bulletExplode);
             GameManager.instance.audioManager.PlaySFX(GameManager.instance.audioManager.gunshot);
-    }
-
-    public void Upgrade(string upgradeType, float multiplier)
-    {
-        if(upgradeType == "Bullets")
-        {
-            bulletSpeed *= multiplier;
-        }
-
     }
 
     private void OnDestroy()

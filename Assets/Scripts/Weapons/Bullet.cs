@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // The effect that is created on bullet's destruction
+    [Tooltip("The effect that is created on bullet's destruction")]
     [SerializeField] GameObject hitEffect;
+    [Tooltip("The effect that is created on bullet's explosion")]
     [SerializeField] Explosion explosionEffect;
-    // The damage the bullet deals
+
+    [Tooltip("The damage the bullet deals")]
     [SerializeField] float damage;
-    // The lifespan of the bullet before it is automatically destroyed
+    [Tooltip("The lifespan of the bullet before it is automatically destroyed")]
     [SerializeField] float lifespan = 1f;
-    // A check for if the bullet can pierce through objects or enemies
+
+    [Tooltip("A check for if the bullet can pierce through objects or enemies")]
     [SerializeField] bool pierce;
-    // A check for if the bullet explodes upon impact
+    [Tooltip("A check for if the bullet explodes upon impact")]
     [SerializeField] bool explodeOnImpact;
 
     /// <summary>
@@ -21,6 +24,7 @@ public class Bullet : MonoBehaviour
     /// </summary>
     /// <param name="damage">The bullet's damage</param>
     /// <param name="pierce">Whether the bullet can pierce through objects or enemies</param>
+    /// <param name="pierce">Whether the bullet can explode on impact</param>
     public void Init(float damage, bool pierce = false, bool explodeOnImpact = false)
     {
         this.damage = damage;
@@ -46,14 +50,18 @@ public class Bullet : MonoBehaviour
         GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(effect, 0.25f);
 
+        bool isObstacle = (GameplayManager.instance.gridMap.ObstacleLayer.value & (1 << collision.gameObject.layer)) != 0;
+
         // Destroy the bullet if pierce is not active
-        if (!pierce) Destroy(gameObject);
+        if (!pierce || isObstacle) Destroy(gameObject);
     }
 
     private void OnDestroy()
     {
+        // Check if the bullet explodes on impact
         if (!explodeOnImpact) return;
 
+        // Create the explosion if it should
         explosionEffect.Explode(transform.position);
     }
 }

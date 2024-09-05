@@ -5,14 +5,21 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Interactables/Explosion")]
 public class Explosion : ScriptableObject
 {
-    [SerializeField] float damage; // The damage of the explosion
-    [SerializeField] float radius; // The radius of the explosion
-    [SerializeField] float force; // The force of the explosion
+    [Tooltip("The animation for the explosion")]
+    [SerializeField] GameObject explosionEffect;
 
-    [SerializeField] LayerMask LayerToHit; // Layers that should be affected by the explosion
+    [Tooltip("The damage of the explosion")]
+    [SerializeField] float damage;
+    [Tooltip("The radius of the explosion")]
+    [SerializeField] float radius;
+    [Tooltip("The knockback force of the explosion")]
+    [SerializeField] float force;
 
-    //public GameObject explosionEffect;
-    [SerializeField] GameObject poolPrefab; // Prefab of the pool of liquid that may be left after the explosion
+    [Tooltip("The layers that should be affected by the explosion")]
+    [SerializeField] LayerMask LayerToHit;
+
+    [Tooltip("Prefab of the pool of liquid that may be left after the explosion")]
+    [SerializeField] GameObject poolPrefab;
 
     public float Radius { get { return radius; } }
 
@@ -23,7 +30,11 @@ public class Explosion : ScriptableObject
     public void Explode(Vector3 origin)
     {
         // Show effect
-        //Instantiate(explosionEffect, transform.position, transform.rotation);
+        GameObject effect = Instantiate(explosionEffect, origin, Quaternion.identity);
+        effect.transform.localScale = Vector3.one * 4 * radius;
+        Destroy(effect, 0.25f);
+
+        GameManager.instance.audioManager.PlaySFX(GameManager.instance.audioManager.explosion);
 
         // Get nearby objects
         Collider2D[] colliders = Physics2D.OverlapCircleAll(origin, radius, LayerToHit);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Particles : MonoBehaviour
 {
-    // The damage the bullet deals
+    [Tooltip("The damage the bullet deals")]
     [SerializeField] float damage;
 
     /// <summary>

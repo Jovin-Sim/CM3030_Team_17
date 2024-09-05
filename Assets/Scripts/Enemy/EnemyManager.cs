@@ -7,16 +7,16 @@ public class EnemyManager : MonoBehaviour
     // Dictionary containing all enemy types
     Dictionary<int, GameObject> enemyTypes = new Dictionary<int, GameObject>();
 
-    // List of enemies in the game scene
+    [Tooltip("List of enemies in the game scene (Read Only)")]
     [SerializeField] List<GameObject> enemies = new List<GameObject>();
 
-    // Maximum number of enemies that can exist
+    [Tooltip("The maximum number of enemies that can exist")]
     [SerializeField] int maxEnemyCount;
-    // Maximum number of enemies to spawn when spawning more enemies
+    [Tooltip("The maximum number of enemies to spawn when spawning enemies")]
     [SerializeField] int maxSpawnAmount;
-    // Time between spawning of newer enemies
+    [Tooltip("The time between spawning of newer enemies")]
     [SerializeField] float spawnIInterval;
-    // Combined spawn chance of all enemies in the zone
+    [Tooltip("The combined spawn chance of all enemies in the zone")]
     [SerializeField] int totalSpawnChance;
 
     Coroutine spawnEnemyCoroutine;
@@ -61,8 +61,12 @@ public class EnemyManager : MonoBehaviour
     {
         // Wait for a number of seconds equal to spawnIInterval before proceeding with spawning
         yield return new WaitForSeconds(spawnIInterval);
+
+        int togetherChance = Random.Range(0, 100);
+        bool together = togetherChance > 70 ? true : false;
+
         // Spawn a random number of a certain enemy
-        SpawnSpecifiedEnemy(GetRandomEnemy(), Random.Range(2, maxSpawnAmount), true);
+        SpawnSpecifiedEnemy(GetRandomEnemy(), Random.Range(2, maxSpawnAmount), together);
         // Restart the spawning coroutine
         StopSpawnEnemyCoroutine();
         StartSpawnEnemyCoroutine();
@@ -105,7 +109,7 @@ public class EnemyManager : MonoBehaviour
         float enemySize = enemy.GetComponent<PathBasedMovement>().Tolerance;
 
         // Check the map for a random empty position to spawn them in that they can fit into
-        Vector3 pos = GameplayManager.instance.gridMap.GetEmptyPosition(enemySize * 2);
+        Vector3 pos = GameplayManager.instance.gridMap.GetEmptyPosition();
 
         // Spawn the enemies
         for (int i = 0; i < amount; ++i)
@@ -115,15 +119,15 @@ public class EnemyManager : MonoBehaviour
             {
                 // Add some randomness to the base position to avoid overlap
                 Vector3 randomOffset = new Vector3(
-                    Random.Range(-enemySize * 0.5f, enemySize * 0.5f),
-                    Random.Range(-enemySize * 0.5f, enemySize * 0.5f),
+                    Random.Range(-enemySize * 1f, enemySize * 1f),
+                    Random.Range(-enemySize * 1f, enemySize * 1f),
                     0f
                 );
 
                 pos += randomOffset;
             }
             // Spawn them in random locations if they are not spawning together
-            else pos = GameplayManager.instance.gridMap.GetEmptyPosition(enemySize * 2);
+            else pos = GameplayManager.instance.gridMap.GetEmptyPosition();
 
             // Spawn the enemy and add them to the list of enemies
             GameObject newEnemy = Instantiate(enemy, pos, Quaternion.identity);
@@ -166,6 +170,9 @@ public class EnemyManager : MonoBehaviour
 
         // Increase the player's score
         GameplayManager.instance.zoneProgression.Score += 10;
+
+        GameplayManager.instance.powerupManager.TrySpawnCollectable(enemy.transform.position);
+
         // Remove the enemy from the list of enemies
         enemies.Remove(enemy);
     }

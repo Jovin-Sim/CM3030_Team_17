@@ -11,18 +11,20 @@ public class PathBasedMovement : MonoBehaviour
     // The index of the current node it is moving towards
     int targetIndex;
 
-    // The original and current acceleration of the entity
-    [SerializeField] float currAccel;
+    [Tooltip("The speed the entity starts at")]
     [SerializeField] float originalAccel = 1f;
+    [Tooltip("The current speed of the entity (Read Only)")]
+    [SerializeField] float currAccel;
 
-    // The distance the entity is from its target before it stops following the player
+    [Tooltip("The minimum distance the entity should be to end its chase")]
     [SerializeField] float stoppingRange = 0f;
 
-    // The tolerance for proximity checks between the entity and the nodes or the target
+    [Tooltip("The tolerance for proximity checks between the entity and the nodes or the target")]
     [SerializeField] float tolerance = 0.1f;
 
-    // The target the entity is chasing
+    [Tooltip("The target the entity is chasing (Read Only)")]
     [SerializeField] Collider2D target = null;
+
     // The last node the target was at
     Node targetNode;
     // Last position the target was in

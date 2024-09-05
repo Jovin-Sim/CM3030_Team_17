@@ -4,24 +4,28 @@ using UnityEngine;
 
 public class Combat : MonoBehaviour
 {
-    // The health bar that shows the entity's hp
+    [Header("Health Properties")]
+    [Tooltip("The entity's health bar")]
     [SerializeField] HealthBar healthBar;
-
-    // The hp of the entity
+    [Tooltip("The hp the entity starts at")]
     [SerializeField] float originalHp = 1;
+    [Tooltip("The maximum hp of the entity (Read Only)")]
     [SerializeField] float maxHp;
+    [Tooltip("The current hp of the entity (Read Only)")]
     [SerializeField] float currHp;
 
-    // The attack of the entity
+    [Header("Attack Properties")]
+    [Tooltip("The attack the entity starts at")]
     [SerializeField] float originalAtk = 1;
+    [Tooltip("The current attack of the entity (Read Only)")]
     [SerializeField] float currAtk;
 
-    // The attack cooldown of the entity
+    [Tooltip("The attack cooldown of the entity")]
     [SerializeField] float atkCd = 1;
-    // The time of the entity's previous attack
+    [Tooltip("The time of the entity's previous attack")]
     [SerializeField] float lastAtkTime;
 
-    // The distance the entity is from its target before it starts attacking the player
+    [Tooltip("The attacking range of the entity")]
     [SerializeField] float atkRange = 0f;
 
     #region Getters & Setters
@@ -102,6 +106,7 @@ public class Combat : MonoBehaviour
     {
         lastAtkTime = Time.time; // Set the last attack time to the current time
         otherEntity.ChangeHP(currAtk); // Change the entity's hp by currAtk
+        GameManager.instance.audioManager.PlaySFX(GameManager.instance.audioManager.enemyAttack);
     }
 
     /// <summary>
@@ -132,14 +137,14 @@ public class Combat : MonoBehaviour
         // Lower the max hp by amount
         maxHp -= amount;
 
+        // Change the health bar's health value
+        if (healthBar != null) healthBar.SetMaxHealth(maxHp);
+
         // If the resulting max hp is lesser than the current hp
         // Lower current hp to max hp's value
         if (currHp > maxHp) currHp = maxHp;
         // If the max hp was increased, increase current hp by the same amount
         else if (amount < 0) ChangeHP(amount);
-
-        // Change the health bar's health value
-        if (healthBar != null) healthBar.SetMaxHealth(maxHp);
     }
 
     /// <summary>
@@ -150,10 +155,12 @@ public class Combat : MonoBehaviour
         // Execute game over if the entity is the player
         if (gameObject == GameplayManager.instance.Player.gameObject)
         {
+            GameManager.instance.audioManager.PlaySFX(GameManager.instance.audioManager.playerDeath);
             GameplayManager.instance.EndGame(false);
             return;
         }
         // Handle enemy despawning
+        GameManager.instance.audioManager.PlaySFX(GameManager.instance.audioManager.enemyDeath);
         GameplayManager.instance.enemyManager.DespawnEnemy(gameObject);
         Destroy(gameObject);
     }

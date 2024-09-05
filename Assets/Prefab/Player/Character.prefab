@@ -215,8 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40039a4726d2afa4c8aa1447f83de261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currMoveSpeed: 0
   originalMoveSpeed: 3
+  currMoveSpeed: 0
   canMove: 1
   fireRate: 0.3
   rapidFire: 0
@@ -238,10 +238,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  originalHp: 5
-  maxHp: 5
+  originalHp: 100
+  maxHp: 0
   currHp: 0
-  originalAtk: 1
+  originalAtk: 5
   currAtk: 0
   atkCd: 1
   lastAtkTime: 0

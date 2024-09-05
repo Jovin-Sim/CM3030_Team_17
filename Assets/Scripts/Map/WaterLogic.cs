@@ -5,17 +5,25 @@ using UnityEngine;
 
 public class WaterLogic : MonoBehaviour
 {
-    [SerializeField] protected float slowdownPercentage;
+    [Tooltip("The speed drop that entities within the object will experience")]
+    [SerializeField] float slowdownPercentage;
+
+    // A dictionary of the affected entities and the amount of speed that was dropped
     protected Dictionary<GameObject, float> affectedEntities = new Dictionary<GameObject, float>();
 
-    [SerializeField] float alpha;
-
+    /// <summary>
+    /// An initializer for the object
+    /// </summary>
+    /// <param name="lifespan">The lifespan of the object</param>
     public void Init(float lifespan = -1f)
     {
+        // Do nothing if the object is not limited in its lifespan
         if (lifespan <= 0) return;
 
+        // Get all the sprite renderers in the game object
         SpriteRenderer[] spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
 
+        // Start the fade out effect for every sprite renderer in the object
         foreach (SpriteRenderer spriteRenderer in spriteRenderers)
         {
             StartCoroutine(FadeOut(spriteRenderer, lifespan));
@@ -24,16 +32,29 @@ public class WaterLogic : MonoBehaviour
         Destroy(gameObject, lifespan);
     }
 
+    /// <summary>
+    /// A coroutine that slowly fades out the object's sprite
+    /// </summary>
+    /// <param name="spriteRenderer">The sprite renderer of the object to fade</param>
+    /// <param name="lifespan">The lifespan of the object</param>
+    /// <returns></returns>
     IEnumerator FadeOut(SpriteRenderer spriteRenderer, float lifespan)
     {
+        // Do nothing if there is no sprite renderer
         if (spriteRenderer == null) yield break;
 
+        // Get the original color of the sprite renderer
         Color originalColor = spriteRenderer.color;
+        // Store the elapsed time
         float timeElapsed = 0f;
 
+        // Continue execution of the coroutine while the lifespan has not been reached
         while (timeElapsed < lifespan)
         {
+            // Increase the time elapsed by delta time
             timeElapsed += Time.deltaTime;
+
+            // Change the alpha for the sprite
             float alpha = Mathf.Lerp(originalColor.a, 0f, timeElapsed / lifespan);
             spriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
             yield return null;

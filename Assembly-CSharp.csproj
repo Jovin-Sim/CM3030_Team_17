@@ -56,15 +56,10 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Character.cs" />
-    <Compile Include="Assets\EndGameMenu.cs" />
-    <Compile Include="Assets\Explosives.cs" />
-    <Compile Include="Assets\HealthBar.cs" />
-    <Compile Include="Assets\PlayerHealth.cs" />
     <Compile Include="Assets\Prefab\Player\PlayerAC.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
-    <Compile Include="Assets\Scripts\Billboard.cs" />
     <Compile Include="Assets\Scripts\Combat\Combat.cs" />
+    <Compile Include="Assets\Scripts\Combat\HealthBar.cs" />
     <Compile Include="Assets\Scripts\Enemy\BaseEnemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\PathBasedMovement.cs" />
@@ -73,10 +68,6 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GameplayManager.cs" />
     <Compile Include="Assets\Scripts\Interactables\Explosion.cs" />
-    <Compile Include="Assets\Scripts\Interactables\Lure.cs" />
-    <Compile Include="Assets\Scripts\Interactables\UpgradeCard\UpgradeCard.cs" />
-    <Compile Include="Assets\Scripts\Interactables\UpgradeCard\UpgradeCardSpawner.cs" />
-    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Map\AcidLogic.cs" />
     <Compile Include="Assets\Scripts\Map\GridMap.cs" />
     <Compile Include="Assets\Scripts\Map\GridNode.cs" />
@@ -84,32 +75,28 @@
     <Compile Include="Assets\Scripts\Map\RoofLogic.cs" />
     <Compile Include="Assets\Scripts\Map\WaterLogic.cs" />
     <Compile Include="Assets\Scripts\Map\ZoneProgression.cs" />
-    <Compile Include="Assets\Scripts\MenuManager.cs" />
-    <Compile Include="Assets\Scripts\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\Player\HealthSystem.cs" />
-    <Compile Include="Assets\Scripts\Player\Player Upgrades\AtkPowerup.cs" />
-    <Compile Include="Assets\Scripts\Player\Player Upgrades\ExplosivesPowerup.cs" />
-    <Compile Include="Assets\Scripts\Player\Player Upgrades\FireRatePowerup.cs" />
-    <Compile Include="Assets\Scripts\Player\Player Upgrades\MaxHealthPowerup.cs" />
-    <Compile Include="Assets\Scripts\Player\Player Upgrades\PiercingPowerup.cs" />
-    <Compile Include="Assets\Scripts\Player\Player Upgrades\PlayerProgression.cs" />
-    <Compile Include="Assets\Scripts\Player\Player Upgrades\Powerup.cs" />
-    <Compile Include="Assets\Scripts\Player\Player Upgrades\SpeedPowerup.cs" />
+    <Compile Include="Assets\Scripts\Menu\EndGameMenu.cs" />
+    <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\Menu\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\Menu\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInputHandler.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\Shooting.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerProgression.cs" />
+    <Compile Include="Assets\Scripts\Powerups\AtkPowerup.cs" />
+    <Compile Include="Assets\Scripts\Powerups\ExplosivesPowerup.cs" />
+    <Compile Include="Assets\Scripts\Powerups\FireRatePowerup.cs" />
+    <Compile Include="Assets\Scripts\Powerups\HealthPowerup.cs" />
+    <Compile Include="Assets\Scripts\Powerups\MaxHealthPowerup.cs" />
+    <Compile Include="Assets\Scripts\Powerups\PiercingPowerup.cs" />
+    <Compile Include="Assets\Scripts\Powerups\Powerup.cs" />
+    <Compile Include="Assets\Scripts\Powerups\PowerupManager.cs" />
+    <Compile Include="Assets\Scripts\Powerups\SpeedPowerup.cs" />
     <Compile Include="Assets\Scripts\Temp\Collectable.cs" />
-    <Compile Include="Assets\Scripts\Temp\CollectableSpawner.cs" />
-    <Compile Include="Assets\Scripts\Temp\HealthCollectableBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Temp\HealthController.cs" />
-    <Compile Include="Assets\Scripts\Temp\ICollectableBehaviour.cs" />
     <Compile Include="Assets\Scripts\Temp\InvincibilityController.cs" />
     <Compile Include="Assets\Scripts\Temp\PlayerDamagedInvincibility.cs" />
-    <Compile Include="Assets\Scripts\Temp\ScoreController.cs" />
-    <Compile Include="Assets\Scripts\Temp\ScoreUI.cs" />
     <Compile Include="Assets\Scripts\Temp\SpriteFlash.cs" />
     <Compile Include="Assets\Scripts\Weapons\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Explosives.cs" />
     <Compile Include="Assets\Scripts\Weapons\Particles.cs" />
   </ItemGroup>
   <ItemGroup>

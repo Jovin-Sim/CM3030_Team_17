@@ -51,10 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe5d74a3ae89b684f97762bd37bc7b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnChance: 0
   target: {fileID: 0}
   rangedParticles: {fileID: 0}
-  dir: {x: 0, y: 0}
 --- !u!114 &6480156241584007334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,10 +66,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  originalHp: 1
-  maxHp: 20
+  originalHp: 15
+  maxHp: 0
   currHp: 0
-  originalAtk: 0.1
+  originalAtk: 0.5
   currAtk: 0
   atkCd: 1
   lastAtkTime: 0
@@ -88,8 +86,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b185689f77493de4f9ae56b4560c36cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  originalAccel: 4
   currAccel: 0
-  originalAccel: 1
   stoppingRange: 2
   tolerance: 0.3
   target: {fileID: 0}

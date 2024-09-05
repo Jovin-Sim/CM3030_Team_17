@@ -50,7 +50,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12ea0bc89dd01b4696446d82e67ecf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnChance: 0
   target: {fileID: 0}
 --- !u!114 &-3623205734568843165
 MonoBehaviour:
@@ -65,12 +64,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  originalHp: 1
-  maxHp: 20
+  originalHp: 20
+  maxHp: 0
   currHp: 0
-  originalAtk: 3
+  originalAtk: 5
   currAtk: 0
-  atkCd: 1
+  atkCd: 0.5
   lastAtkTime: 0
   atkRange: 0
 --- !u!114 &8897858710531945167
@@ -85,8 +84,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b185689f77493de4f9ae56b4560c36cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  originalAccel: 3
   currAccel: 0
-  originalAccel: 1
   stoppingRange: 0
   tolerance: 0.3
   target: {fileID: 0}
@@ -209,7 +208,6 @@ GameObject:
   - component: {fileID: 2772735749708380092}
   - component: {fileID: 4012558892313828694}
   - component: {fileID: 7771422183203430557}
-  - component: {fileID: 8939568512579436744}
   m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
@@ -297,18 +295,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8939568512579436744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4367586574779588148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9038328f9527b4848ac3ec0102e6bb00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5588159467774556037
 PrefabInstance:
   m_ObjectHideFlags: 0

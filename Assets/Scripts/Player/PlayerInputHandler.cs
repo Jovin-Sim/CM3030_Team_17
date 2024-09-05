@@ -8,13 +8,16 @@ public class PlayerInputHandler : MonoBehaviour
     PlayerInput input;
     PlayerAC actions;
 
+    // Delegate and event for handling pause action
     public delegate void PauseAction();
     public event PauseAction OnPause;
 
+    // Delegate and events for handling fire action
     public delegate void FireAction();
     public event FireAction OnFireStart;
     public event FireAction OnFireStop;
 
+    // Properties for storing movement and look input vectors
     public Vector2 MoveInput { get; private set; }
     public Vector2 LookInput { get; private set; }
 
@@ -22,10 +25,10 @@ public class PlayerInputHandler : MonoBehaviour
     {
         input = GetComponent<PlayerInput>();
         actions = new PlayerAC();
+        // Enable the UI action map
         actions.UI.Enable();
 
-        //actions.UI.Pause.performed += ctx => OnPause?.Invoke();
-
+        // Subscribe to the appropriate input events
         actions.Player.Pause.performed += ctx => OnPause?.Invoke();
 
         actions.Player.Fire.started += ctx => OnFireStart?.Invoke();
@@ -37,6 +40,12 @@ public class PlayerInputHandler : MonoBehaviour
         actions.Player.Look.canceled += ctx => LookInput = Vector2.zero;
     }
 
+    /// <summary>
+    /// Changes the active action map between gameplay and UI
+    /// Also adjusts the game's time scale
+    /// </summary>
+    /// <param name="mapName">The name of the action map to enable</param>
+    /// <param name="timeScale">The time scale to apply</param>
     public void ChangeActionMap(string mapName, float timeScale = 1f)
     {
         switch (mapName)
@@ -52,12 +61,13 @@ public class PlayerInputHandler : MonoBehaviour
             default:
                 break;
         }
-
+        // Set the time scale for the game
         Time.timeScale = timeScale;
     }
 
     void OnDisable()
     {
+        // Disable both action maps on destroy
         actions.Player.Disable();
         actions.UI.Disable();
     }
