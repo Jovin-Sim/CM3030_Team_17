@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowdownPercentage: 20
-  damagePerTurn: 1
+  damagePerTurn: 3
   damageCooldown: 1
 --- !u!1 &722861404002417978
 GameObject:

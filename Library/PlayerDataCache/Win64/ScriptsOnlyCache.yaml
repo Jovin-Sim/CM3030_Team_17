@@ -12,7 +12,6 @@ ScriptsOnlyBuild:
     - EnemyManager
     - Explosion
     - Explosives
-    - ExplosivesPowerup
     - FireRatePowerup
     - GameManager
     - GameplayManager
@@ -193,8 +192,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11684}
     - Class: 114
       Script: {instanceID: 11876}
-    - Class: 114
-      Script: {instanceID: 11978}
     - Class: 114
       Script: {instanceID: 12068}
     - Class: 114
@@ -1202,4 +1199,5 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/ReyScene.unity
-  playerPath: C:/Users/cindy/Dropbox/PC/Downloads/Stuff/Horde in the Streets.exe
+  playerPath: C:/Users/cindy/Dropbox/PC/Downloads/Horde in the Streets/Horde in the
+    Streets.exe

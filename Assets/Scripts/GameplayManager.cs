@@ -37,14 +37,16 @@ public class GameplayManager : MonoBehaviour
             return;
         }
 
+        player = FindObjectOfType<PlayerController>();
+
         menuManager = GetComponent<MenuManager>();
         gridMap = GetComponent<GridMap>();
         zoneProgression = GetComponent<ZoneProgression>();
         pathfinding = GetComponent<Pathfinding>();
         enemyManager = GetComponent<EnemyManager>();
         powerupManager = GetComponent<PowerupManager>();
+        powerupManager.Init();
 
-        player = FindObjectOfType<PlayerController>();
         zoneProgression.SetPlayerTransform(player.transform);
     }
 

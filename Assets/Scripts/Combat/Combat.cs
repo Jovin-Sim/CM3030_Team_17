@@ -118,11 +118,11 @@ public class Combat : MonoBehaviour
         // Lower the hp by amount
         currHp -= amount;
 
-        // If the resulting hp is greater than the max hp, change it to the max hp
-        if (currHp > maxHp) currHp = maxHp;
+        // Ensure that the current hp is between 0 and max hp
+        currHp = Mathf.Clamp(currHp, 0, maxHp);
 
         // The entity dies if it's hp goes to 0
-        else if (currHp <= 0) Die();
+        if (currHp <= 0) Die();
         
         // Change the health bar's health value
         if (healthBar != null) healthBar.SetHealth(currHp);

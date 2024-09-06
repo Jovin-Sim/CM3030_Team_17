@@ -23,9 +23,5 @@ public class HealthPowerup : BasePowerup
     }
 
     protected override void RemoveEffect(PlayerController player)
-    {
-        // Check if the player has a combat component
-        // And lower their health back to the previous amount
-        if (player.TryGetComponent<Combat>(out Combat combat)) combat.ChangeHP(amount);
-    }
+    {}
 }

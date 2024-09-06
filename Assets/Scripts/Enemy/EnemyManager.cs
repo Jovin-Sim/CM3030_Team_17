@@ -114,20 +114,8 @@ public class EnemyManager : MonoBehaviour
         // Spawn the enemies
         for (int i = 0; i < amount; ++i)
         {
-            // Check if the enemies are supposed to spawn together
-            if (together)
-            {
-                // Add some randomness to the base position to avoid overlap
-                Vector3 randomOffset = new Vector3(
-                    Random.Range(-enemySize * 1f, enemySize * 1f),
-                    Random.Range(-enemySize * 1f, enemySize * 1f),
-                    0f
-                );
-
-                pos += randomOffset;
-            }
-            // Spawn them in random locations if they are not spawning together
-            else pos = GameplayManager.instance.gridMap.GetEmptyPosition();
+            // Spawn them in random locations
+            pos = GameplayManager.instance.gridMap.GetEmptyPosition();
 
             // Spawn the enemy and add them to the list of enemies
             GameObject newEnemy = Instantiate(enemy, pos, Quaternion.identity);

@@ -6,9 +6,6 @@ using UnityEngine.UI;
 
 public class PlayerProgression : MonoBehaviour
 {
-    // Store the powerup manager
-    PowerupManager powerupManager;
-
     [Tooltip("The cards that displays the powerups")]
     [SerializeField] List<GameObject> cards = new List<GameObject>(3);
 
@@ -17,9 +14,6 @@ public class PlayerProgression : MonoBehaviour
 
     private void Awake()
     {
-        // Get the powerupManager instance
-        powerupManager = GameplayManager.instance.powerupManager;
-
         // Loop through each card in cards
         foreach (GameObject card in cards)
         {
@@ -48,7 +42,7 @@ public class PlayerProgression : MonoBehaviour
         if (canvasGroup != null) canvasGroup.alpha = 1f;
 
         // Create a temporary list to store the available powerups
-        List<BasePowerup> tempEffects = new List<BasePowerup>(powerupManager.AvailablePowerups);
+        List<BasePowerup> tempEffects = new List<BasePowerup>(GameplayManager.instance.powerupManager.AvailablePowerups);
 
         // Remove the explosives powerup from tempEffects
         foreach (BasePowerup powerup in tempEffects)
@@ -126,7 +120,7 @@ public class PlayerProgression : MonoBehaviour
         BasePowerup selectedEffect = cardEffects[selectedCard];
 
         // Apply the selected effect
-        powerupManager.ApplyPowerup(selectedEffect);
+        GameplayManager.instance.powerupManager.ApplyPowerup(selectedEffect);
 
         // Clear the card-effect map for the next selection
         cardEffects.Clear();

@@ -35,12 +35,12 @@ PrefabInstance:
     - target: {fileID: 6480156241584007334, guid: 9f7165f3692aacb4e87f46c4c2e7ce21,
         type: 3}
       propertyPath: originalHp
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6480156241584007334, guid: 9f7165f3692aacb4e87f46c4c2e7ce21,
         type: 3}
       propertyPath: originalAtk
-      value: 1
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6917161881991476890, guid: 9f7165f3692aacb4e87f46c4c2e7ce21,
         type: 3}

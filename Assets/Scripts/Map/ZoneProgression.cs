@@ -149,7 +149,6 @@ public class ZoneProgression : MonoBehaviour
         }
 
         // Enable the player upgrade panel and show the upgrades they could get
-        playerProgression.gameObject.SetActive(true);
         playerProgression.ShowEffects();
 
         // Enable the indicator to the next zone

@@ -3,32 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|c:\\users\\cindy\\onedrive\\documents\\github\\cm3030_team_17\\assets\\scripts\\map\\zoneprogression.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\map\\zoneprogression.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|c:\\users\\cindy\\onedrive\\documents\\github\\cm3030_team_17\\assets\\scripts\\powerups\\healthpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\powerups\\healthpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\assets\\scripts\\menu\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menu\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\assets\\scripts\\player\\playerinputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerinputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\assets\\scripts\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|c:\\users\\cindy\\onedrive\\documents\\github\\cm3030_team_17\\assets\\scripts\\menu\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menu\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\assets\\scripts\\menu\\endgamemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menu\\endgamemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|c:\\users\\cindy\\onedrive\\documents\\github\\cm3030_team_17\\assets\\scripts\\combat\\combat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\combat\\combat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,91 +27,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ZoneProgression.cs",
-              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Map\\ZoneProgression.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Map\\ZoneProgression.cs",
-              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Map\\ZoneProgression.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Map\\ZoneProgression.cs",
-              "ViewState": "AgIAAMQAAAAAAAAAAAAUwOcAAAAvAAAAAAAAAA==",
+              "Title": "HealthPowerup.cs",
+              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Powerups\\HealthPowerup.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Powerups\\HealthPowerup.cs",
+              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Powerups\\HealthPowerup.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Powerups\\HealthPowerup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T08:56:03.922Z",
+              "WhenOpened": "2024-09-06T10:45:05.977Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PauseMenu.cs",
-              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Menu\\PauseMenu.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Menu\\PauseMenu.cs",
-              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Menu\\PauseMenu.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Menu\\PauseMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAABDAAAAAAAAAA==",
+              "Title": "Combat.cs",
+              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Combat\\Combat.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Combat\\Combat.cs",
+              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Combat\\Combat.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Combat\\Combat.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAYwJ0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T08:38:07.554Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "EndGameMenu.cs",
-              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Menu\\EndGameMenu.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Menu\\EndGameMenu.cs",
-              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Menu\\EndGameMenu.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Menu\\EndGameMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T08:38:06.565Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MainMenu.cs",
-              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Menu\\MainMenu.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Menu\\MainMenu.cs",
-              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Menu\\MainMenu.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Menu\\MainMenu.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAA0wBYAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T08:38:06.059Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\GameManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
-              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\GameManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T08:37:13.536Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AudioManager.cs",
-              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\AudioManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AudioManager.cs",
-              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\AudioManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AudioManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T08:37:12.961Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PlayerInputHandler.cs",
-              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Player\\PlayerInputHandler.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerInputHandler.cs",
-              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Player\\PlayerInputHandler.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerInputHandler.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T08:36:50.287Z",
+              "WhenOpened": "2024-09-06T10:44:55.583Z",
               "EditorCaption": ""
             }
           ]

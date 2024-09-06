@@ -294,7 +294,12 @@ public class GridMap : MonoBehaviour
             }
         }
         // An empty position was not found
-        if (emptyPos.Count == 0) Debug.LogError("No empty positions could be found!");
+        if (emptyPos.Count == 0)
+        {
+            Debug.LogError("No empty positions could be found!");
+
+            return Vector3.zero;
+        }
 
         // Return a random position in emptyPos
         int randomIndex = Random.Range(0, emptyPos.Count);

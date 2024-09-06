@@ -66,10 +66,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  originalHp: 15
+  originalHp: 25
   maxHp: 0
   currHp: 0
-  originalAtk: 0.5
+  originalAtk: 0.3
   currAtk: 0
   atkCd: 1
   lastAtkTime: 0
@@ -898,7 +898,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 500
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -1163,7 +1163,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1000
+      scalar: 500
       minScalar: 10
       maxCurve:
         serializedVersion: 2

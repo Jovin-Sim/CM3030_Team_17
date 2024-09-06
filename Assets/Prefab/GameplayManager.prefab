@@ -115,8 +115,9 @@ MonoBehaviour:
   zoneDetails: []
   zoneColliders: []
   nextZoneIndicators: []
-  minBounds: {x: 0, y: 0}
-  maxBounds: {x: 0, y: 0}
+  bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
 --- !u!114 &2751082348333265011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +167,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0a7beaf8753695345b72555f97efe4f2, type: 2}
   - {fileID: 11400000, guid: 8c74fadada8970c49885e3c885a1f1ad, type: 2}
   - {fileID: 11400000, guid: 3f27b5b4e352bd54eb815ca46d6b1c91, type: 2}
-  - {fileID: 11400000, guid: 148aa9a656b617d4eb29842daa572f18, type: 2}
   - {fileID: 11400000, guid: 416102ca1dd5a3d4fb792ea91df1f19f, type: 2}
   availablePowerups: []
   activePowerups: []

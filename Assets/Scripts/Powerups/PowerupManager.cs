@@ -14,17 +14,13 @@ public class PowerupManager : MonoBehaviour
     [Tooltip("The list of all active powerups")]
     [SerializeField] List<BasePowerup> activePowerups = new List<BasePowerup>();
 
-    // The player instance
-    PlayerController player;
-
     public List<BasePowerup> AvailablePowerups { get { return availablePowerups; } }
 
-    void Start()
+    public void Init()
     {
-        // Get the player instance
-        player = GameplayManager.instance.Player;
         // Copy the contents of allPowerups into availablePowerups
         availablePowerups = new List<BasePowerup>(allPowerups);
+        activePowerups = new List<BasePowerup>();
     }
 
     /// <summary>
@@ -79,7 +75,7 @@ public class PowerupManager : MonoBehaviour
     {
         // Add the powerup to the active list and apply the effect
         activePowerups.Add(powerup);
-        powerup.ApplyPowerup(player);
+        powerup.ApplyPowerup(GameplayManager.instance.Player);
 
         // If the powerup has a duration, manage its removal after the duration ends
         if (powerup.Duration > 0) 
@@ -103,7 +99,7 @@ public class PowerupManager : MonoBehaviour
         yield return new WaitForSeconds(powerup.Duration);
 
         // Remove the powerup from the player and the list of active powerups
-        powerup.RemovePowerup(player);
+        powerup.RemovePowerup(GameplayManager.instance.Player);
         activePowerups.Remove(powerup);
     }
 
@@ -115,7 +111,7 @@ public class PowerupManager : MonoBehaviour
         // Loop through all active powerups and remove their effects
         foreach (var powerup in activePowerups)
         {
-            powerup.RemovePowerup(player);
+            powerup.RemovePowerup(GameplayManager.instance.Player);
         }
 
         // Clear the list of active powerups
