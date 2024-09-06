@@ -32,7 +32,7 @@ public class ZoneProgression : MonoBehaviour
     [SerializeField] List<Image> nextZoneIndicators;
 
     [Tooltip("The bounds of the current zone")]
-    [SerializeField] Vector2 minBounds, maxBounds;
+    [SerializeField] Bounds bounds;
 
     GridMap gridMap;
     Camera mainCamera;
@@ -52,8 +52,6 @@ public class ZoneProgression : MonoBehaviour
         }
     }
     public int CurrentZone { get { return currentZone; } set { currentZone = value; } }
-    public Vector2 MinBounds { get { return minBounds; } }
-    public Vector2 MaxBounds { get { return maxBounds; } }
 
     void Awake()
     {
@@ -76,9 +74,9 @@ public class ZoneProgression : MonoBehaviour
         if (!indicatingNextZone) return;
 
         // Check if the player has went to the next zone and update the zone if they have
-        Vector3 playerPosition = playerTransform.position;
-        if (minBounds.x > playerPosition.x || playerPosition.x > maxBounds.x ||
-            minBounds.y > playerPosition.y || playerPosition.y > maxBounds.y)
+        Vector3 viewportPosition = Camera.main.WorldToViewportPoint(playerTransform.position);
+        if (0 > viewportPosition.x || viewportPosition.x > 1 ||
+            0 > viewportPosition.y || viewportPosition.y > 1) 
             UpdateZone();
     }
 
@@ -187,11 +185,6 @@ public class ZoneProgression : MonoBehaviour
         // Set the enemy spawning details of the current zone
         GameplayManager.instance.enemyManager.SetZoneDetails(zoneDetails[currentZone]);
 
-        // Reposition the camera and recalculate the bounds
-        mainCamera.transform.position = zone;
-        minBounds = mainCamera.ScreenToWorldPoint(mainCamera.pixelRect.min);
-        maxBounds = mainCamera.ScreenToWorldPoint(mainCamera.pixelRect.max);
-
         // Enable the zone collider of the current zone and disable the zone collider for the previous zone
         zoneColliders[currentZone].SetActive(true);
         if (currentZone > 0)
@@ -200,11 +193,43 @@ public class ZoneProgression : MonoBehaviour
             nextZoneIndicators[currentZone - 1].enabled = false;
         }
 
+        // Recalculate the bounds
+        bounds = zoneColliders[currentZone].GetComponent<Collider2D>().bounds;
+
+        // Ensure the player is within the new zone bounds
+        Vector3 playerPosition = playerTransform.position;
+
+        if (!bounds.Contains(playerPosition))
+        {
+            // Clamp the player's position to be within the bounds of the zone
+            playerPosition.x = Mathf.Clamp(playerPosition.x, bounds.min.x + 0.5f, bounds.max.x - 0.5f);
+            playerPosition.y = Mathf.Clamp(playerPosition.y, bounds.min.y + 0.5f, bounds.max.y - 0.5f);
+
+            // Move the player to the clamped position
+            playerTransform.position = playerPosition;
+        }
+
+        // Recalibrate the camera
+        RecalibrateCamera();
+
         // Get the nodes for this new zone
-        gridMap.InitializeNodes(minBounds, maxBounds);
+        gridMap.InitializeNodes(bounds);
 
         // Start the enemy spawning coroutine again
         GameplayManager.instance.enemyManager.StartSpawnEnemyCoroutine();
         indicatingNextZone = false;
+    }
+
+    /// <summary>
+    /// Recalibrate the camera for the new zone
+    /// </summary>
+    void RecalibrateCamera()
+    {
+        float vertical = bounds.size.y;
+        float horizontal = bounds.size.x * mainCamera.pixelHeight / mainCamera.pixelWidth;
+
+        mainCamera.rect = new Rect((1 - 0.8f) / 2, 0, 0.8f, 1);
+        mainCamera.orthographicSize = Mathf.Max(horizontal, vertical) * 0.5f;
+        mainCamera.transform.position = bounds.center + new Vector3(0, 0, -10);
     }
 }

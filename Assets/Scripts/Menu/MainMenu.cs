@@ -19,6 +19,9 @@ public class MainMenu : MonoBehaviour
     {
         audioManager.PlaySFX(audioManager.buttonSelect);
         GameManager.instance.inputHandler.ChangeActionMap("Player", 1f);
+
+        transform.GetChild(0).gameObject.SetActive(false);
+
         SceneManager.LoadScene("ReyScene");
     }
 

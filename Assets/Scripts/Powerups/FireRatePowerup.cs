@@ -15,12 +15,12 @@ public class FireRatePowerup : BasePowerup
         // Calculate the amount that their fire rate should be increased by
         float amount = player.FireRate * percentage / 100f;
         // Increase their fire rate by the amount
-        player.FireRate += amount;
+        player.FireRate -= amount;
     }
 
     protected override void RemoveEffect(PlayerController player)
     {
         // Lower their fire rate back to the previous amount
-        player.FireRate -= amount;
+        player.FireRate += amount;
     }
 }

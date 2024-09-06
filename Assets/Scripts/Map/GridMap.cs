@@ -1,9 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -166,9 +162,8 @@ public class GridMap : MonoBehaviour
     /// <summary>
     /// Initializes the nodes in the current zone
     /// </summary>
-    /// <param name="minBounds">The lower bounds of the map</param>
-    /// <param name="maxBounds">The upper bounds of the map</param>
-    public void InitializeNodes(Vector2 minBounds, Vector2 maxBounds)
+    /// <param name="bounds">The bounds of the map</param>
+    public void InitializeNodes(Bounds bounds)
     {
         // Do nothing if the node or cell size is too small
         if (nodeSize < minNodeSize || cellSize < minCellSize) return;
@@ -178,14 +173,14 @@ public class GridMap : MonoBehaviour
         allNodes.Clear();
 
         // Get bounds
-        minX = minBounds.x;
-        minY = minBounds.y;
-        maxX = maxBounds.x;
-        maxY = maxBounds.y;
+        minX = bounds.min.x;
+        minY = bounds.min.y;
+        maxX = bounds.max.x;
+        maxY = bounds.max.y;
 
         // Find the number of nodes there should be in the x and y axis
-        int numNodesX = Mathf.RoundToInt((maxBounds.x - minBounds.x) / nodeSize);
-        int numNodesY = Mathf.RoundToInt((maxBounds.y - minBounds.y) / nodeSize);
+        int numNodesX = Mathf.RoundToInt((maxX - minX) / nodeSize);
+        int numNodesY = Mathf.RoundToInt((maxY - minY) / nodeSize);
 
         for (int x = 1; x < numNodesX; ++x)
         {
