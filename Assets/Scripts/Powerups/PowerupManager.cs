@@ -131,16 +131,4 @@ public class PowerupManager : MonoBehaviour
         allPowerups.Clear();
         activePowerups.Clear();
     }
-
-    private void OnDestroy()
-    {
-        RemoveAllPowerups();
-        StopAllCoroutines();
-    }
-
-    private void OnApplicationQuit()
-    {
-        RemoveAllPowerups();
-        StopAllCoroutines();
-    }
 }

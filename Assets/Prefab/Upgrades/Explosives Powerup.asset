@@ -15,4 +15,4 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 393283399af9de64b966328406151553, type: 3}
   powerupName: Explosives Powerup
   duration: -1
-  limitedUse: 0
+  limitedUse: 1
