@@ -218,20 +218,4 @@ public class PathBasedMovement : MonoBehaviour
             transform.GetComponentInChildren<Canvas>().transform.localRotation = Quaternion.Euler(transform.localRotation.x, 180, transform.localRotation.z);
         }
     }
-
-    void OnDrawGizmosSelected()
-    {
-        // Do nothing if there is no path
-        if (path == null) return;
-
-        // Loop through each node and draw them, connecting each node with a line
-        for (int i = targetIndex; i < path.Length; ++i)
-        {
-            Gizmos.color = Color.black;
-            Gizmos.DrawCube(path[i], Vector3.one * 0.1f);
-
-            if (i == targetIndex) Gizmos.DrawLine(transform.position, path[i]);
-            else Gizmos.DrawLine(path[i - 1], path[i]);
-        }
-    }
 }

@@ -95,4 +95,10 @@ public class WaterLogic : MonoBehaviour
         // Remove them from affectedEntities
         affectedEntities.Remove(collision.gameObject);
     }
+
+    private void OnDestroy()
+    {
+        affectedEntities.Clear();
+        affectedEntities = null;
+    }
 }

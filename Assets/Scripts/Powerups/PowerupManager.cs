@@ -101,6 +101,8 @@ public class PowerupManager : MonoBehaviour
         // Remove the powerup from the player and the list of active powerups
         powerup.RemovePowerup(GameplayManager.instance.Player);
         activePowerups.Remove(powerup);
+
+        Destroy(powerup);
     }
 
     /// <summary>
@@ -108,13 +110,37 @@ public class PowerupManager : MonoBehaviour
     /// </summary>
     public void RemoveAllPowerups()
     {
-        // Loop through all active powerups and remove their effects
+        // Loop through all powerups, remove their effects, and destroy them
+        foreach (var powerup in allPowerups)
+        {
+            if (powerup != null) Destroy(powerup);
+        }
+        foreach (var powerup in availablePowerups)
+        {
+            if (powerup != null) Destroy(powerup);
+        }
         foreach (var powerup in activePowerups)
         {
+            if (powerup == null) Destroy(powerup);
             powerup.RemovePowerup(GameplayManager.instance.Player);
+            Destroy(powerup);
         }
 
-        // Clear the list of active powerups
+        // Clear all lists of powerups
+        availablePowerups.Clear();
+        allPowerups.Clear();
         activePowerups.Clear();
+    }
+
+    private void OnDestroy()
+    {
+        RemoveAllPowerups();
+        StopAllCoroutines();
+    }
+
+    private void OnApplicationQuit()
+    {
+        RemoveAllPowerups();
+        StopAllCoroutines();
     }
 }

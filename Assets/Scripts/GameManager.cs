@@ -35,4 +35,11 @@ public class GameManager : MonoBehaviour
         inputHandler = gameObject.GetComponent<PlayerInputHandler>();
         audioManager = gameObject.GetComponent<AudioManager>();
     }
+
+    private void OnApplicationQuit()
+    {
+        Destroy(inputHandler);
+        Destroy(audioManager);
+        Destroy(gameObject);
+    }
 }

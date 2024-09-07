@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\assets\\scripts\\gameplaymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameplaymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|c:\\users\\cindy\\onedrive\\documents\\github\\cm3030_team_17\\assets\\scripts\\map\\gridmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\map\\gridmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|c:\\users\\cindy\\onedrive\\documents\\github\\cm3030_team_17\\assets\\scripts\\player\\playerinputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerinputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,27 +27,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GameplayManager.cs",
-              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\GameplayManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameplayManager.cs",
-              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\GameplayManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameplayManager.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAswD0AAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T09:34:54.339Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "GridMap.cs",
               "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Map\\GridMap.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Map\\GridMap.cs",
               "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Map\\GridMap.cs",
               "RelativeToolTip": "Assets\\Scripts\\Map\\GridMap.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAowCwBAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T10:36:28.763Z",
+              "WhenOpened": "2024-09-06T18:14:10.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerInputHandler.cs",
+              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Player\\PlayerInputHandler.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerInputHandler.cs",
+              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Player\\PlayerInputHandler.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerInputHandler.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAuwFUAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T18:12:10.03Z",
               "EditorCaption": ""
             }
           ]

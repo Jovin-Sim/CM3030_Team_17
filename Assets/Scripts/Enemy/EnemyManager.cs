@@ -164,4 +164,21 @@ public class EnemyManager : MonoBehaviour
         // Remove the enemy from the list of enemies
         enemies.Remove(enemy);
     }
+
+    private void OnDestroy()
+    {
+        foreach (GameObject enemy in enemyTypes.Values)
+        {
+            Destroy(enemy);
+        }
+        foreach (var enemy in enemies)
+        {
+            Destroy(enemy);
+        }
+
+        enemyTypes.Clear();
+        enemies.Clear();
+        enemyTypes = null;
+        enemies = null;
+    }
 }

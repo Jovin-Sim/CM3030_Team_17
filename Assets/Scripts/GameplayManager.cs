@@ -62,5 +62,17 @@ public class GameplayManager : MonoBehaviour
     public void EndGame(bool win)
     {
         menuManager.EndGame(win);
-    }    
+    }
+
+    private void OnApplicationQuit()
+    {
+        Destroy(player);
+        Destroy(menuManager);
+        Destroy(gridMap);
+        Destroy(zoneProgression);
+        Destroy(pathfinding);
+        Destroy(enemyManager);
+        Destroy(powerupManager);
+        Destroy(gameObject);
+    }
 }

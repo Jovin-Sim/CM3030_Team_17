@@ -1,16 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|c:\\users\\cindy\\onedrive\\documents\\github\\cm3030_team_17\\assets\\scripts\\powerups\\healthpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\powerups\\healthpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|c:\\users\\cindy\\onedrive\\documents\\github\\cm3030_team_17\\assets\\scripts\\combat\\combat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1B754AC-1F17-339E-F93E-C765E6889E12}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\combat\\combat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,37 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HealthPowerup.cs",
-              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Powerups\\HealthPowerup.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Powerups\\HealthPowerup.cs",
-              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Powerups\\HealthPowerup.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Powerups\\HealthPowerup.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T10:45:05.977Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Combat.cs",
-              "DocumentMoniker": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Combat\\Combat.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Combat\\Combat.cs",
-              "ToolTip": "C:\\Users\\cindy\\OneDrive\\Documents\\GitHub\\CM3030_Team_17\\Assets\\Scripts\\Combat\\Combat.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Combat\\Combat.cs",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAYwJ0AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T10:44:55.583Z",
-              "EditorCaption": ""
             }
           ]
         }

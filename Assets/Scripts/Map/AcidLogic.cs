@@ -57,4 +57,9 @@ public class AcidLogic : WaterLogic
             damageAffectedEntities = null;
         }
     }
+
+    private void OnApplicationQuit()
+    {
+        StopAllCoroutines();
+    }
 }

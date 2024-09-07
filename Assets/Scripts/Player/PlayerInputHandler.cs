@@ -71,4 +71,20 @@ public class PlayerInputHandler : MonoBehaviour
         actions.Player.Disable();
         actions.UI.Disable();
     }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe from input events
+        actions.Player.Pause.performed -= ctx => OnPause?.Invoke();
+        actions.Player.Fire.started -= ctx => OnFireStart?.Invoke();
+        actions.Player.Fire.canceled -= ctx => OnFireStop?.Invoke();
+        actions.Player.Move.performed -= ctx => MoveInput = ctx.ReadValue<Vector2>();
+        actions.Player.Move.canceled -= ctx => MoveInput = Vector2.zero;
+        actions.Player.Look.performed -= ctx => LookInput = ctx.ReadValue<Vector2>();
+        actions.Player.Look.canceled -= ctx => LookInput = Vector2.zero;
+
+        // Disable the action maps
+        actions.Player.Disable();
+        actions.UI.Disable();
+    }
 }

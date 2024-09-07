@@ -172,5 +172,7 @@ public class PlayerController : MonoBehaviour
 
         inputHandler.OnFireStart -= StartFiring;
         inputHandler.OnFireStop -= StopFiring;
+
+        StopAllCoroutines();
     }
 }

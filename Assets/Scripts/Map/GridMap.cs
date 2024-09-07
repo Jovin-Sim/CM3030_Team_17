@@ -22,11 +22,6 @@ public class GridMap : MonoBehaviour
     [SerializeField] int cellSize = 1;
     // The minimum size the cells could be
     int minCellSize = 1;
-    [Tooltip("The opacity of the cells")]
-    [SerializeField] float cellOpacity = 1f;
-
-    [Tooltip("A bool to toggle the display of the nodes")]
-    [SerializeField] bool showNodes = true;
 
     [Tooltip("The layers that should be treated as obstacles")]
     [SerializeField] LayerMask obstacleLayer;
@@ -56,36 +51,6 @@ public class GridMap : MonoBehaviour
     {
         // Retrieve the grid from the scene
         grid = FindObjectOfType<Grid>();
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        // Do nothing if there are no nodes or if the nodes should not be displayed
-        if (allNodes == null || partitionedNodes == null || !showNodes) return;
-
-        // Draw the nodes
-        foreach (var node in allNodes.Values)
-        {
-            switch (node.NodeType)
-            {
-                case NodeType.FLOOR:
-                    Gizmos.color = floorNodeColor;
-                    break;
-                case NodeType.OBSTACLE:
-                    Gizmos.color = obstacleNodeColor;
-                    break;
-            }
-
-            Gizmos.DrawCube(node.Position, Vector3.one * 0.1f);
-        }
-
-        Gizmos.color = new Color(0, 0, 1, cellOpacity);
-        foreach (var cell in partitionedNodes.Keys)
-        {
-            Vector3 pos = new Vector3(cell.x * cellSize + cellSize / 2.0f, cell.y * cellSize + cellSize / 2.0f, 0);
-            Vector3 size = new Vector3(cellSize, cellSize, 1);
-            Gizmos.DrawWireCube(pos, size);
-        }
     }
 
     /// <summary>
@@ -432,5 +397,8 @@ public class GridMap : MonoBehaviour
 
         // Clear the dictionary of cells
         partitionedNodes.Clear();
+
+        allNodes = null;
+        partitionedNodes = null;
     }
 }

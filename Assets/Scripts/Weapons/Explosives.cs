@@ -21,11 +21,4 @@ public class Explosives : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    void OnDrawGizmosSelected()
-    {
-        // Draws the range of the explosion
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, explosionData.Radius);
-    }
 }

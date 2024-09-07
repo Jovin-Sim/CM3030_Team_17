@@ -22,4 +22,20 @@ public class ZoneDetails : MonoBehaviour
     public int MaxSpawnAmount { get { return maxSpawnAmount; } }
     public float SpawnIInterval { get { return spawnIInterval; } }
     #endregion
+
+    private void OnDestroy()
+    {
+        enemySpawnChances.Clear();
+        enemyPrefabs.Clear();
+        enemySpawnChances = null;
+        enemyPrefabs = null;
+    }
+
+    private void OnApplicationQuit()
+    {
+        enemySpawnChances.Clear();
+        enemyPrefabs.Clear();
+        enemySpawnChances = null;
+        enemyPrefabs = null;
+    }
 }
